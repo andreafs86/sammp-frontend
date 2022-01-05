@@ -1,0 +1,39 @@
+@import "variables";
+/**
+ * Bit Box Icons
+ *
+ * Configurações de tamanhos para os ícones
+ *
+ *  @project BitBox
+ *  @version 1.0
+ *  @package utils/icon/icons
+ *  @date  16/04/2020
+ *  @lastmodified 16/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @author Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+i.fa,i.far,i.fas{
+    font-size: $standard_size;
+    height: $standard_size;
+    width: $standard_size;
+    text-align: center;
+}
+
+/**
+ * Configuração  de tamanhos de icones
+ *
+ * @section utils/icon/icons/sizes
+ */
+@for $i from 1 to 65 {
+    @if $i % 4 == 0  {
+        i.fa.#{$PREFIX}-size-#{$i},
+        i.fas.#{$PREFIX}-size-#{$i},
+        i.far.#{$PREFIX}-size-#{$i} {
+            $size: $i * 1px;
+            font-size: $size;
+            height: $size;
+            width: $size;
+        }
+    } 
+}

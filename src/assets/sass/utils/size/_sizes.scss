@@ -1,0 +1,55 @@
+@import "../config";
+@import "variables";
+
+/**
+ * Bit Box Tamanhos
+ *
+ *  @project BitBox
+ *  @version 1.0
+ *  @package utils/size/sizes
+ *  @date  16/04/2020
+ *  @lastmodified 16/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @author Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+
+/**
+ * Atribuindo alturas
+ *
+ * Gerando helpers de alturas 
+ *
+ * @section utils/sizes/sizes/width
+ */
+.#{$PREFIX}-h {
+    @for $i from 1 to 101 {
+        @if $i%4 == 0 {        
+            &-#{$i} {
+                height:$i* 1px !important;
+            }
+        }
+        &r-#{$i} { // Porcentagem
+            height:$i* 1% !important;
+        }
+    }
+}
+
+/**
+ * Atribuindo larguras
+ *
+ * Gerando helpers de largura 
+ *
+ * @section utils/sizes/sizes/width
+ */
+.#{$PREFIX}-w {
+    @for $i from 1 to 101 {
+        @if $i % 4 == 0 {
+            &-#{$i} {
+                width: $i * 1px !important;
+            }
+        }
+        &r-#{$i} { // Porcentagem
+            width: $i * 1% !important;
+        }
+    }
+}

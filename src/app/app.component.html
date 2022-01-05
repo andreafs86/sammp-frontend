@@ -1,0 +1,61 @@
+<btx-header-top
+    btx-system="Painel CEDESBR803 | Cartões"
+    btx-initials-system="Acompanhamento de Mudanças"></btx-header-top>
+
+<div *ngIf="!hasRoute('cadastro')">
+
+    <div class="container">
+        <div class="row btx-m-t-24">
+            <div class="col-md-4">
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Data Início de pesquisa"
+                    btx-placeholder="dd/MM/aaaa"
+                    ngModel
+                    name="dataInicio"
+                    btx-type="date"
+                    btx-required 
+                    btx-validate
+                    btx-label="Data Início de pesquisa"
+                    #nome="ngModel"
+                    (btx-change)="buscar($event)"
+                    #dataInicio
+                    >
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Data Fim de pesquisa"
+                    btx-placeholder="dd/MM/aaaa"
+                    ngModel
+                    name="dataFim"
+                    btx-type="date"
+                    btx-required 
+                    btx-validate
+                    btx-label="Data Fim de pesquisa"
+                    #nome="ngModel"
+                    (btx-change)="buscar($event)"
+                    #dataFim
+                    >
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <p>Total de mudanças: {{rms.length}}</p>
+            </div>
+        </div>
+    </div>
+        
+    <div class="container">
+        <div class="row btx-m-t-24">
+            <div class="col-md-12">
+                <h1>Linha do Tempo das Mudanças</h1>
+            </div>
+            <div class="col-md-12">
+                <div id="chart_div" [hidden]="!isShowChart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

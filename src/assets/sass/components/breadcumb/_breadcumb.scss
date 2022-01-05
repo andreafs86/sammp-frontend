@@ -1,0 +1,39 @@
+@import "properties";
+.#{$PREFIX}-breadcumb{
+    display: flex;
+    margin-top: 24px;
+    font-size: map-get($font-sizes,'size-less-2');
+
+    .voltar{
+        margin-left: 8px;
+        color: map-get($object_color,'grafite-standard');
+        font-weight: bold;
+        padding-right: 8px;
+        border-right: 1px solid map-get($object_color,'gelo-standard');
+        margin-right: 4px;
+        line-height: 1;
+        height: 13px;
+        margin-top: 2px;
+        
+    }
+    ul{
+        margin-bottom: 0;
+        display: flex;
+        list-style: none;        
+        line-height: 1;
+
+        li{
+            padding-right: 4px;
+
+            a{
+                color: map-get($object_color,'info-standard');
+                font-weight: 300;
+            }
+
+            span,i{
+                color: map-get($object_color,'grafite-lighter-3');
+                font-size: map-get($font-sizes,'size-less-2');
+            }
+        }
+    }
+}

@@ -1,0 +1,278 @@
+
+<div class="container">
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <h1>Exemplos Botões</h1>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Padrão</p>
+            <btx-button btx-label="Botão" ></btx-button>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Cores</p>
+            
+            <btx-button 
+            btx-label="Primary"
+            btx-type="button"
+            btx-category="primary"
+            ></btx-button>
+            
+            <btx-button 
+                btx-label="Secondary"
+                btx-type="button"
+                btx-category="secondary"
+                btx-icon-direction="left"
+                btx-class="btx-m-l-16"
+                ></btx-button>
+
+            <btx-button 
+            btx-label="Aux_dest"
+            btx-type="button"
+            btx-category="aux_dest"
+            btx-class="btx-m-l-16"
+            btx-icon-direction="left"
+            ></btx-button>
+
+            <btx-button 
+            btx-label="Aux"
+            btx-type="button"
+            btx-category="aux"
+            btx-class="btx-m-l-16"
+            btx-icon-direction="left"
+            ></btx-button>
+
+            <btx-button 
+            btx-label="Select"
+            btx-type="button"
+            btx-category="selected"
+            btx-class="btx-m-l-16"
+            ></btx-button>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Tamanhos</p>
+            <btx-button 
+                btx-label="Xs"
+                btx-size="xs"
+                btx-type="button"
+                btx-category="secondary"
+                btx-icon-direction="left"
+                ></btx-button>
+
+            <btx-button 
+                btx-label="Sm"
+                btx-size="sm"
+                btx-category="secondary"
+                btx-icon-direction="left"
+                btx-class="btx-m-l-16"
+                ></btx-button>
+
+            <btx-button 
+                btx-label="St"
+                btx-size="st"
+                btx-category="secondary"
+                btx-icon-direction="left"
+                btx-class="btx-m-l-16"
+                ></btx-button>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Desabilitado</p>
+            <btx-button 
+                btx-label="Botão"
+                btx-type="button"
+                btx-category="secondary"
+                btx-icon-direction="left"
+                btx-disabled
+                ></btx-button>
+        </div>
+    </div>
+    
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Auto Focus</p>
+            <btx-button 
+                btx-autofocus
+                btx-label="Botão"
+                btx-type="button"
+                btx-category="secondary"
+                btx-icon-direction="left"
+                ></btx-button>
+        </div>
+    </div>
+
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Com ícone</p>
+           
+            <btx-button 
+            btx-label="Botão"
+            btx-type="button"
+            btx-category="secondary"
+            btx-icon-direction="right"
+            btx-icon="fa-user"
+            ></btx-button>
+           
+            <btx-button 
+            btx-label="Botão"
+            btx-type="button"
+            btx-category="secondary"
+            btx-class="btx-m-l-16"
+            btx-icon-direction="left"
+            btx-icon="fa-user"
+            ></btx-button>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Tipos</p>
+           
+            <btx-button 
+            btx-label="Button"
+            btx-type="button"
+            btx-category="secondary"
+            ></btx-button>
+           
+            <btx-button 
+            btx-label="Submit"
+            btx-type="submit"
+            btx-category="secondary"
+            btx-class="btx-m-l-16"
+            ></btx-button>
+           
+            <btx-button 
+            btx-label="Link"
+            btx-type="link"
+            btx-link="/"
+            btx-category="secondary"
+            btx-class="btx-m-l-16"
+            ></btx-button>
+           
+            <btx-button 
+            btx-label="Reset"
+            btx-type="reset"
+            btx-category="secondary"
+            btx-class="btx-m-l-16"
+            ></btx-button>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Customizações</p>
+            <btx-button 
+            btx-label="Click"
+            btx-category="secondary"
+            btx-class="alt-focus"
+            ></btx-button>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <h3>Eventos</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="btx-m-b-16">Click</p>
+                    <btx-button 
+                        btx-label="Click"
+                        btx-category="primary"
+                        (btx-click)="clickTest($event)"
+                    ></btx-button>
+                    <btx-button 
+                        btx-label="Alt click"
+                        btx-category="primary"
+                        (btx-alt-click)="clickTest($event)"
+                        btx-class="btx-m-l-16"
+                    ></btx-button>
+                    <btx-button 
+                        btx-label="Scroll click"
+                        btx-category="primary"
+                        (btx-scroll-click)="clickTest($event)"
+                        btx-class="btx-m-l-16"
+                    ></btx-button>
+                    <btx-button 
+                        btx-label="Right Click"
+                        btx-category="primary"
+                        (btx-btx-mouseenter)="clickTest($event)"
+                        btx-class="btx-m-l-16"
+                    ></btx-button>
+                </div>
+            </div>
+            <div class="row btx-m-t-16">
+                <div class="col-md-12">
+                    <p class="btx-m-b-16">Mouse</p>
+                    <btx-button 
+                        btx-label="Mouse leave"
+                        btx-category="secondary"
+                        (btx-mouseleave)="clickTest($event)"
+                    ></btx-button>
+                    <btx-button 
+                        btx-label="Mouse Enter"
+                        btx-category="secondary"
+                        (btx-btx-mouseenter)="clickTest($event)"
+                        btx-class="btx-m-l-16"
+                    ></btx-button>
+                </div>
+            </div>
+            <div class="row btx-m-t-16">
+                <div class="col-md-12">
+                    <p class="btx-m-b-16">Foco</p>
+                    <btx-button 
+                        btx-label="Focus"
+
+                        (btx-focus)="clickTest($event)"
+                    ></btx-button>
+                    <btx-button 
+                        btx-label="Blur "
+
+                        (btx-blur)="clickTest($event)"
+                        btx-class="btx-m-l-16"
+                    ></btx-button>
+                </div>
+            </div>
+            <div class="row btx-m-t-16">
+                <div class="col-md-12">
+                    <p class="btx-m-b-16">Drag</p>
+                    <btx-button 
+                        btx-label="Drag"
+                        btx-category="aux_dest"
+                        (btx-drag)="clickTest($event)"
+                    ></btx-button>
+                    <btx-button 
+                        btx-label="Drop"
+                        btx-category="aux_dest"
+                        (btx-drop)="clickTest($event)"
+                        btx-class="btx-m-l-16"
+                    ></btx-button>
+                </div>
+            </div>
+            <div class="row btx-m-t-16 btx-m-b-16">
+                <div class="col-md-12">
+                    <p class="btx-m-b-16">Acelerometro</p>
+                    <btx-button 
+                        btx-label="Acelerometer"
+                        btx-category="selected"
+                        (btx-accelerometer)="clickTest($event)"
+                    ></btx-button>
+                </div>
+            </div>
+            <div class="row btx-m-t-16 btx-m-b-16">
+                <div class="col-md-12">
+                    <p>Network</p>
+                    <btx-button 
+                        btx-label="Estado da internet"
+                        btx-category="selected"
+                        (btx-offline)="testNetwork($event)"
+                        (btx-online)="testNetwork($event)"
+                        
+                    ></btx-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

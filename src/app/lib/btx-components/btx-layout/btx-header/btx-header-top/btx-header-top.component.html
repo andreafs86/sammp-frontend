@@ -1,0 +1,44 @@
+<header class="btx-header btx-bg-{{color}}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 btx-flex header-box">
+                <div>
+
+                    <div class="menu-icon-box" *ngIf="btnMenu && btnMenuSide =='left'" (click)="openMenu($event)">
+                        <i class="fa fa-bars btx-size-16" *ngIf="!menuOpen"></i>
+                        <i class="fa fa-times btx-size-16" *ngIf="menuOpen"></i>
+                        <span>Menu</span>
+                    </div>
+                    <svg viewBox="0 0 72 16" title="Logo Caixa" fill="none" xmlns="http://www.w3.org/2000/svg"  class="logo d-none d-sm-inline">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M68.71 0H62.8094L55 16H60.2524L61.4102 13.8687H66.4391L66.8191 16H72L68.71 0ZM63.1804 9.88209L65.0936 5.14349L65.8133 9.88209H63.1804Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9585 8.57336H49.3677L53.7586 15.9556H47.3495L42.9585 8.57336Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M43.624 7.43987H50.2477L56.0002 0.0887451H49.3765L43.624 7.43987Z" fill="#F07D1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M37 15.9999H43.6237L49.3762 8.55994H42.7525L37 15.9999Z" fill="#F07D1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M39.3906 0H45.5721L49.8055 7.44001H43.624L39.3906 0Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30 16L32.4182 0H38L35.5818 16H30Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3458 0L13 16H17.9435L19.0331 13.8681H23.7662L24.1238 16H29L25.9035 0H20.3458ZM20.6992 9.88484L22.4915 5.16273L22.4999 5.14047L23.1772 9.88039H20.6992V9.88484Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13 0.882175L12.4818 5.42246C10.4876 2.87097 5.8747 4.6321 5.50918 7.81073C5.0465 11.8442 9.49287 12.7849 11.9081 10.4095L11.3852 14.9626C10.6635 15.2934 9.96018 15.5468 9.26153 15.7186C8.56751 15.8905 7.87349 15.985 7.18409 15.9979C6.31888 16.015 5.53232 15.9291 4.82441 15.7444C4.11651 15.564 3.47801 15.2762 2.91354 14.8853C1.82161 14.1422 1.03042 13.2015 0.544606 12.0546C0.0587906 10.9035 -0.103148 9.60623 0.0634174 8.15437C0.197595 6.9903 0.512219 5.92503 1.01654 4.96285C1.51624 4.00067 2.21026 3.1244 3.08936 2.32974C3.92218 1.57374 4.82904 1.00245 5.80993 0.611562C6.78618 0.229267 7.85498 0.0230855 9.00706 0.00160832C9.69645 -0.011278 10.372 0.0531537 11.029 0.199199C11.6999 0.353835 12.3522 0.581493 13 0.882175Z" fill="white"/>
+                    </svg>
+                    <svg viewBox="0 0 19 16" title="Ícone do logo da Caixa [X]" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo d-inline d-sm-none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.9585 8.57336H12.3677L16.7586 15.9556H10.3495L5.9585 8.57336Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.62378 7.43987H13.2475L19 0.0887451H12.3763L6.62378 7.43987Z" fill="#F07D1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15.9999H6.62368L12.3762 8.55994H5.75249L0 15.9999Z" fill="#F07D1B"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.39038 0H8.5719L12.8053 7.44001H6.62376L2.39038 0Z" fill="white"/>
+                    </svg>
+    
+                    <a> 
+                        <span class="btx-text-bold" [attr.title]="nomeSistema">{{siglaSistema}}</span> <span class="system-name d-none d-sm-inline"> - {{nomeSistema}} </span>
+                    </a>
+                </div>
+                <div class="btx-flex">
+                    <ng-content></ng-content>
+                    <div class="menu-icon-box right"  *ngIf="btnMenu && btnMenuSide =='right'" (click)="openMenu($event)">
+                        <i class="fa fa-bars btx-size-16" *ngIf="!menuOpen"></i>
+                        <i class="fa fa-times btx-size-16" *ngIf="menuOpen"></i>
+                        <span>Menu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

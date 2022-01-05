@@ -1,0 +1,13 @@
+<btx-header-top
+    btx-system="Exemplo de Menu com navegação"
+    btx-initials-system="DSC"
+    btx-menu
+    btx-menu-side="right"
+    [btx-open]="showMenu"
+    (btx-open-menu)="openMenu()"></btx-header-top>
+
+<btx-navbar-navigation
+    [btx-options]="menu"
+    btx-direction="top"
+    [btx-show-menu]="showMenu"
+></btx-navbar-navigation>

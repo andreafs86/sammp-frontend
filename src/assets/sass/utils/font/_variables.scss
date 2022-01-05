@@ -1,0 +1,166 @@
+/**
+ * Bit Box
+ * 
+ * Arquivo responsável por armazenar variáveis de font
+ * 
+ * @project BitBox
+ * @version 1.0
+ * @package utils/font/variables
+ * @date  16/04/2020
+ * @lastmodified 16/04/2020  <ljoliveira2@stefanini.com>
+ * @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ * @author Luigi Oliveira <ljoliveira2@stefanini.com>
+ * @copyright 2020, Caixa Econômica Federal 
+ */
+
+/**
+ * Arquivos de font 
+ *
+ * Recuperar e organizar arquivos de font
+ *
+ * @section utils/font/variables/font-face
+ */
+@font-face { // Futura STD Book
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-book.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face { // Futura Lt Font Book Italic
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-book-italic.ttf") ;
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face { // Futura Lt Font Medium
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-medium.ttf") ;
+    font-weight: 500;
+}
+
+@font-face { // Futura Lt Font Medium Italic
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-medium-italic.ttf") ;
+    font-weight: 500;
+    font-style:italic;
+}
+
+@font-face { // Futura Lt Font Heavy
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-heavy.ttf") ;
+    font-weight: 700;
+}
+
+@font-face { // Futura Lt Font Heavy Italic
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-heavy-italic.ttf") ;
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face { // Futura Lt Font Bold
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-bold.ttf") ;
+    font-weight: 800;
+}
+
+@font-face { // Futura Lt Font Bold
+    font-family: "Futura STD";
+    src: url("assets/fonts/Futura-STD/futura-bold-italic.ttf") ;
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face { // Futura Lt Arial Monospace
+    font-family: "Arial Monospace";
+    src: url("assets/fonts/Arial-Monospace/arial-monospaced-mt.ttf") ;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/**
+ * Font Standards 
+ *
+ * Ordem de prioridade de fontes caso a maquina do usuário não 
+ * suporte a Futura.
+ *
+ * @section utils/font/variables/font-face
+ */
+$FONT-FAMILY: "Futura STD", Arial,  sans-serif !default;
+
+/**
+ * Escala de Fonte
+ *
+ * Escala que será utilizada para construir as fontes.
+ *
+ * @section utils/font/variables/font-scale
+ */
+$FONT-SCALE: 1.08;
+
+/**
+ * Espaçamento entre linhas
+ *
+ * Espaçamentos que irão compor as caracteristicas das tags
+ *
+ * @section utils/font/variables/font-scale
+ */
+$LINE-HEIGHT: (
+    'lg' : 140%,
+    'st' : 120%,
+    'sm' : 100%,
+    );
+
+/**
+ * Objeto de tamanhos de fonte
+ *
+ * Objeto que será populado com todos os tamanhos de fonte
+ *
+ * @section utils/font/variables/font-scale
+ */
+$font-sizes: (
+    'size-0' : 16px
+);
+
+/**
+ * Objeto de tamanhos de fonte auxiliar
+ *
+ * Objeto que será utilizado com os valores 
+ * sem arredondamento
+ *
+ * @section utils/font/variables/font-scale
+ */
+$aux-fonts : (
+    'size-0': 16px
+);
+
+/**
+ * Gerando fontes
+ *
+ * Script que populará objeto de fontes com os tamanhos especificos.
+ *
+ * @section utils/font/variables/font-scale/generate
+ */
+@for $scale from 1 through 20 {
+    $remValue: map-get($aux-fonts,'size-#{$scale - 1}') * 1.08;
+    $font-size: ('size-#{$scale}' : floor($remValue));
+    $aux: ('size-#{$scale}' : $remValue);
+    $font-sizes: map-merge($font-sizes,$font-size);
+    $aux-fonts : map-merge($font-sizes,$aux);
+}
+
+/**
+ * Gerando Fontes
+ *
+ * Script que populará objeto de fontes com tamanho menores que o :root.
+ *
+ * @section utils/font/variables/font-scale/generate
+ */
+@for $scale from -1 through -3 {
+    $remValue: map-get($aux-fonts,'size-#{$scale + 1}') / 1.08;
+    $font-size: ('size-less#{$scale}' : floor($remValue));
+    $aux: ('size-#{$scale}' : $remValue);
+    $font-sizes: map-merge($font-sizes,$font-size);
+    $aux-fonts : map-merge($font-sizes,$aux);
+}

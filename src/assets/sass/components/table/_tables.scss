@@ -1,0 +1,196 @@
+@import "properties";
+.#{$PREFIX}-table{
+
+    border: 1px solid map-get($object_color,'gelo-lighter-2');
+    border-radius: 4px;
+
+    .configuration{
+        background-color: map-get($object_color,'bg-polar');
+        padding:4px;
+        align-items: left;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 4px;
+        overflow: hidden;
+        justify-content: space-between;
+
+        .left{
+
+            background-color: map-get($object_color,'gelo-lighter-3');
+            border: 1px solid map-get($object_color,'gelo-lighter-2');
+            display: flex;
+            height: 48px;
+            border-right:none;
+            .filter-result{
+                font-weight: 300;
+                display: flex;
+                padding:16px;
+                border-right: 1px solid map-get($object_color,'gelo-lighter-1');
+                color: map-get($object_color,'grafite-lighter-2');
+                line-height: 1;
+                font-size: 14px;
+    
+                .fa{
+                    margin-left: 8px;
+                }
+            }
+            .search-result{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 16px;
+                border-right: 1px solid map-get($object_color,'gelo-lighter-1');
+            }
+        }
+        .right{
+            height: 48px;
+            background-color: map-get($object_color,'gelo-lighter-3');
+            border: 1px solid map-get($object_color,'gelo-lighter-2');
+            border-left:none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .results{
+                display: flex;
+                padding: 0 16px;
+
+                .text,.number{
+                    padding: 5px 8px;
+                    font-weight: bold;
+                    color: map-get($object_color,'grafite-lighter-2');
+                    font-size: map-get($font-sizes,'size-less-2');
+                }
+                .number{
+                    min-width: 120px;
+                }
+            }
+            .pagination{
+                display: block;
+                height: 48px;
+                padding: 0 16px;
+                border-left: 1px solid map-get($object_color,'gelo-lighter-1');
+
+                ul{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    list-style: none;
+                    
+                    li{
+                        margin: 12px 4px;
+                        font-size: map-get($font-sizes,'size-less-2');
+                        text-align: center;
+                        width: 24px;
+                        height: 24px;
+                        line-height: 24px;
+                        border-radius: 4px;
+                        color: map-get($object_color,'turquesa-standard');
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        &.atual{
+                        background-color: map-get($object_color,'bg-polar');
+                            color: map-get($object_color,'grafite-standard');
+                        }
+ 
+                        &.inactive{
+                            color: map-get($object_color,'gelo-standard');
+                        }
+                    }
+                }
+            }
+            .ir-para{   
+                display: flex;
+                align-items: center;
+                height: 48px;
+                justify-content: center;
+                padding: 0 16px; 
+
+                span{
+                    font-size: map-get($font-sizes,'size-less-2');
+                    columns: map-get($object_color,'grafite-lighter-2');
+                    margin-right: 4px;
+                    min-width: 40px;
+                }
+                .input-box{
+                    width: 38px;
+                    input{
+                        width: 100%;
+                    }
+                }
+                
+            }
+            .options{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 16px;
+                border-left: 1px solid map-get($object_color,'gelo-lighter-1');
+                color: map-get($object_color,'grafite-standard');
+
+                .fa-chevron-down{
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+    .table{
+        margin-bottom:0 ;
+        tr{
+            height: 48px;
+            th,td{
+                padding: 0 16px;
+                height: 48px;
+                line-height: 48px;
+                font-weight: 300;
+
+                &.check{
+                    width: 68px;
+                    text-align: right;
+                    padding: 0 16px; 
+                    color: map-get($object_color,'gelo-lighter-2');    
+
+                    &.success-border{
+                        border-left:4px solid map-get($object_color,'success-standard');
+                    }
+
+                    &.warning-border{
+                        border-left:4px solid map-get($object_color,'warning-standard');
+                    }
+
+                    &.info-border{
+                        border-left:4px solid map-get($object_color,'info-standard');
+                    }
+
+                    &.danger-border{
+                        border-left:4px solid map-get($object_color,'danger-standard');
+                    }
+
+                    &.gray-border{
+                        border-left:4px solid map-get($object_color,'gelo-standard');
+                    }
+                }
+
+                .fa-chevron-right{
+                    color: map-get($object_color,'grafite-standard');
+                    padding-right: 8px;
+                }
+            }
+
+            &.child{
+                background-color: map-get($object_color,'bg-porcelana');
+                
+                .check{
+                    border-left:8px solid map-get($object_color,'gelo-standard') !important;
+                }
+            }
+            th{
+                font-size: map-get($font-sizes,'size-less-2');
+                color: map-get($object_color,'grafite-lighter-2');
+                font-weight: bold;
+            }
+            
+        }
+    }
+} 

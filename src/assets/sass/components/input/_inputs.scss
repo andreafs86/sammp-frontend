@@ -1,0 +1,272 @@
+@import "properties";
+.#{$PREFIX}-input{
+    
+    display: grid;
+    grid-template-rows: auto ;
+
+    &:focus{
+        outline: none;
+    }
+   &.focus:not(:hover):not(:active){
+        outline-color: map-get($object_color,'info-standard');
+        outline-width: 2px;
+        outline-style: solid;
+        outline-offset: 5px;
+    }
+    label{
+        padding: 0 0 4px 8px;
+        font-size: map-get($font-sizes,'size-0');
+        display: flex;
+        line-height: 1;
+        margin-bottom: 0;
+
+        .principal{
+            color: map-get($object_color,'grafite-standard');
+            font-weight: bold; 
+            margin-right: 4px;
+            margin-left: 8px;
+        }
+        .fa{
+            margin: 2px;
+        }
+    }
+
+    textarea{
+        display: flex;
+        background-color: map-get($object_color,'gelo-lighter-3');
+        border: 1px solid map-get($object_color,'gelo-standard');
+        border-radius: 4px;
+        font-weight: 300;
+
+        flex-grow: 1;
+        padding:0 8px;
+        font-weight: 300;
+
+        color: map-get($object_color,'grafite-standard');
+        
+        &::-webkit-input-placeholder,
+        &:-ms-input-placeholder,
+        &::placeholder {
+            color: map-get($object_color,'gelo-darker-2');
+            font-weight: 300;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+
+        &:focus{
+            outline: none;
+        }
+
+        &:disabled{
+            background-color: map-get($object_color,'gelo-lighter-2');
+        }
+    }
+
+    .input-box{
+        display: flex;
+        background-color: map-get($object_color,'gelo-lighter-3');
+        border: 1px solid map-get($object_color,'gelo-standard');
+        border-radius: 4px;
+        height: 42px;
+        font-weight: 300;
+
+        input{
+            border: none;
+            flex-grow: 1;
+            padding:0 8px;
+            font-weight: 300;
+            border-radius: 4px;
+
+            color: map-get($object_color,'grafite-standard');
+            
+            &::-webkit-input-placeholder,
+            &:-ms-input-placeholder,
+            &::placeholder {
+                color: map-get($object_color,'gelo-darker-2');
+                font-weight: 300;
+            }
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            &[type=number] {
+                -moz-appearance: textfield;
+            }
+            
+
+            &:focus{
+                outline: none;
+            }
+
+            &:disabled{
+                background-color: map-get($object_color,'gelo-lighter-2');
+            }
+        }
+        .input-icon{
+            transition: 1s;
+            width: 42px;
+            height: 40px;
+            text-align: center;
+            background-color: map-get($object_color,'bg-polar');
+            border-radius: 4px 0 0 4px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+
+            &.right{
+                border-radius: 0 4px 4px 0;
+                background-color: map-get($object_color,'gelo-lighter-3');
+
+                cursor: pointer;
+                
+                &.no-click{
+                    background-color: map-get($object_color,'bg-polar');
+                    cursor: auto;
+                }
+            }
+            .mic-icon{
+                color: map-get($object_color,'danger-darker-1');
+                animation: mic-animation 2s infinite;
+            }
+        }
+
+    }
+
+    .message-show{
+        border-radius: 4px 4px 0 0;
+
+        + .input-message{
+            border-radius: 0 0 4px 4px;
+            background-color: map-get($object_color,'grafite-standard');
+            color: map-get($object_color,'gelo-lighter-3');
+            font-size: map-get($font-sizes,'size-less-3');
+            padding: 5px 14px;
+            font-weight: 300;
+    
+            .fa{
+                width: 14px;
+                height: 14px;
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        
+        }
+
+
+        &.warning{
+            border: 1px solid map-get($object_color,'warning-lighter-1');
+            background-color: map-get($object_color,'warning-lighter-1');
+            
+            + .input-message{
+                background-color: map-get($object_color,'warning-lighter-1');
+                color: map-get($object_color,'grafite-darker-3');
+            }
+        }
+
+
+        &.error{
+            border: 1px solid map-get($object_color,'danger-darker-1');
+            background-color: map-get($object_color,'danger-darker-1');
+            
+            + .input-message{
+                background-color: map-get($object_color,'danger-darker-1');
+                color: map-get($object_color,'gelo-lighter-3');
+            }
+        }
+
+        &.success{
+            border: 1px solid map-get($object_color,'success-darker-1');
+            background-color: map-get($object_color,'success-darker-1');
+            
+            + .input-message{
+                background-color: map-get($object_color,'success-darker-1');
+                color: map-get($object_color,'gelo-lighter-3');
+            }
+        }
+    }
+
+
+    .complementary-text{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 8px 0 8px;
+        font-size: map-get($font-sizes,'size-less-3'); 
+        
+        span{
+            line-height: 1;
+        }
+    }
+
+    &.sm{
+        .input-box{
+            height: 34px;
+
+            .input-icon{
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        .input-message{
+            padding: 5px 11px;
+        }
+    }
+
+    &.xs{
+        .input-box{
+            height: 26px;
+
+            input{
+                font-size: map-get($font-sizes,'size-less-2');
+            }
+            .input-icon{
+                height: 24px;
+                width: 24px;
+
+                .fa{
+                    font-size: 14px;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+        }
+
+        .input-message{
+            padding: 5px 7px;
+        }
+    }
+}
+
+
+@keyframes mic-animation {
+    0%   {
+        opacity: 1;
+    }
+    25%  {
+        opacity: 0;
+    }
+    50%  {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }

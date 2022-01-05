@@ -1,0 +1,142 @@
+@import "../../utils/variables";
+$map-scales-button: (
+    "st" : (
+        "height": 44px,
+        "min-width": 104px,
+        "padding": 0 32px,
+        "font-size":map-get($font-sizes,'size-0'),
+        "font-weight": 800,
+    ),
+    "sm" : (
+        "height": 36px,
+        "min-width": 88px,
+        "padding": 0 24px,
+        "font-size": map-get($font-sizes,'size-less-1'),
+        "font-weight": 800,
+    ),
+    "xs" : (
+        "height": 28px,
+        "min-width": 72px,
+        "padding": 0 16px,
+        "font-size": map-get($font-sizes,'size-less-3'),
+        "font-weight": 700,
+    ),
+);
+$map-properties-button: (
+    "primary": (
+        ""   /* standard*/ : (
+            "color_tx":map-get($object_color,'grafite-darker-3'),
+            "color_bg":map-get($object_color,'laranja_cx-lighter-1'),
+            // "box-shadow":0px 2px 1px rgba(map-get($object_color,"laranja_cx-standard"),0.16),
+            "transform":translate(0,0),
+            "border":none
+            ),
+        ":hover" : (
+            "color_tx":map-get($object_color,'grafite-darker-3'),
+            "color_bg":map-get($object_color,'laranja_cx-lighter-2'),
+            "box-shadow":0px 4px 4px rgba(map-get($object_color,'laranja_cx-standard'),0.24),
+            "transform":translate(0,-2px),
+            "border":none
+        ),
+        ":active" : (
+            "color_tx":map-get($object_color,'grafite-darker-3'),
+            "color_bg":map-get($object_color,'laranja_cx-standard'),
+            "box-shadow":none,
+            "transform":translate(0,2px),
+            "border":none
+        ),
+    ),
+    
+    "secondary": (
+        ""  /* standard*/ : (
+            "color_tx":map-get($object_color,'gelo-lighter-3'),
+            "color_bg":map-get($object_color,'azul_cx-darker-1'),
+            "box-shadow":0px 2px 1px rgba(map-get($object_color,"azul_cx-standard"),0.24),
+            "transform":translate(0,0),
+            "border":none
+            ),
+        ":hover" : (
+            "color_tx":map-get($object_color,'gelo-lighter-3'),
+            "color_bg":map-get($object_color,'azul_cx-standard'),
+            "box-shadow":0px 4px 4px rgba(map-get($object_color,'azul_cx-standard'),0.24),
+            "transform":translate(0,-2px),
+            "border":none
+        ),
+        ":active" : (
+            "color_tx":map-get($object_color,'gelo-lighter-3'),
+            "color_bg":map-get($object_color,'azul_cx-darker-2'),
+            "box-shadow":none,
+            "transform":translate(0,2px),
+            "border":none
+        ),
+    ), 
+
+    "aux": (
+        ""  : (
+            "color_tx":map-get($object_color,'grafite-standard'),
+            "color_bg":map-get($object_color,'gelo-lighter-3'),
+            "box-shadow":0px 2px 1px rgba(map-get($object_color,'grafite-standard'),0.24),
+            "transform":translate(0,0),
+            "border":1px solid map-get($object_color,'grafite-standard'),
+            ),
+        ":hover" : (
+            "color_tx":map-get($object_color,'grafite-standard'),
+            "color_bg":map-get($object_color,'gelo-lighter-3'),
+            "box-shadow":0px 4px 4px rgba(map-get($object_color,'grafite-standard'),0.24),
+            "transform":translate(0,-2px),
+            "border":1px solid map-get($object_color,'grafite-lighter-2')
+        ),
+        ":active" : (
+            "color_tx":map-get($object_color,'grafite-standard'),
+            "color_bg":map-get($object_color,'gelo-lighter-2'),
+            "box-shadow":none,
+            "transform":translate(0,2px),
+            "border":1px solid map-get($object_color,'grafite-standard')
+        ),
+    ),
+
+    "aux_dest":(
+        ""  /* standard*/ : (
+            "color_tx":map-get($object_color,'azul_cx-standard'),
+            "color_bg":map-get($object_color,'gelo-lighter-3'),
+            "box-shadow":0px 2px 1px rgba(map-get($object_color,'gelo-standard'),0.24),
+            "transform":translate(0,0),
+            "border":1px solid map-get($object_color,'azul_cx-standard')
+            ),
+        ":hover" : (
+            "color_tx":map-get($object_color,'azul_cx-lighter-1'),
+            "color_bg":map-get($object_color,'gelo-lighter-3'),
+            "box-shadow":0px 4px 4px rgba(map-get($object_color,'gelo-standard'),0.24),
+            "transform":translate(0,-2px),
+            "border":1px solid map-get($object_color,'azul_cx-lighter-2') 
+        ),
+        ":active" : (
+            "color_tx":map-get($object_color,'azul_cx-lighter-3'),
+            "color_bg":map-get($object_color,'gelo-darker-2'),
+            "box-shadow":none,
+            "transform":translate(0,2px),
+            "border":1px solid map-get($object_color,'azul_cx-lighter-2')
+        ),
+    ),
+    
+    "danger":(
+        "" /* standard*/ : (
+            "color_tx":map-get($object_color,'gelo-lighter-3'),
+            "color_bg":map-get($object_color,'danger-darker-1'),
+            "box-shadow":0px 2px 1px rgba(map-get($object_color,'danger-standard'),0.24),
+            "transform":translate(0,0),
+            ),
+        ":hover" : (
+            "color_tx":map-get($object_color,'gelo-lighter-3'),
+            "color_bg":map-get($object_color,'danger-standard'),
+            "box-shadow":0px 4px 4px rgba(map-get($object_color,'danger-standard'),0.24),
+            "transform":translate(0,-2px),
+        ),
+        ":active" : (
+            "color_tx":map-get($object_color,'gelo-lighter-3'),
+            "color_bg":map-get($object_color,"danger-darker-2"),
+            "box-shadow":none,
+            "transform":translate(0,2px),
+        ),
+    ),
+);

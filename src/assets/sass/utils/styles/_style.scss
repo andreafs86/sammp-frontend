@@ -1,0 +1,83 @@
+@import "variables";
+
+.#{$PREFIX}-pull-right {
+    float: right !important;
+}
+
+.#{$PREFIX}-pull-left {
+    float: left !important;
+}
+
+.#{$PREFIX}-show {
+    display: inherit !important;
+}
+
+.#{$PREFIX}-hide {
+    display: none !important
+}
+
+.#{$PREFIX}-flex {
+    display: flex !important
+}
+
+.#{$PREFIX}-border-radius,.#{$PREFIX}-br{
+    @for $i from 1 to 49 {
+        @if $i % 4 == 0 {
+            
+            $border_value : $i * 1px ;
+
+            &-#{$i} {
+                border-radius: $border_value !important;
+            }
+
+            &-top-#{$i}, &-t-#{$i} {
+                border: $border_value $border_value 0 0 !important;
+            }
+
+            &-bottom-#{$i}, &-b-#{$i} {
+                border: 0 0 $border_value $border_value  !important;
+            }
+
+            &-left-#{$i}, &-l-#{$i} {
+                border:  $border_value 0 0 $border_value  !important;
+            }
+
+            &-right-#{$i}, &-r-#{$i} {
+                border:  0 $border_value $border_value 0 !important;
+            }
+
+            &-topleft-#{$i}, &-tl-#{$i} {
+                border-top-left-radius: $border_value !important;
+            }
+
+            &-topright-#{$i}, &-tr-#{$i} {
+                border-top-right-radius: $border_value !important;
+            }
+
+            &-bottomleft-#{$i}, &-bl-#{$i} {
+                border-bottom-left-radius: $border_value !important;
+            }
+
+            &-topright-#{$i}, &-br-#{$i} {
+                border-bottom-right-radius: $border_value !important;
+            }
+            
+        }
+    }
+
+    &-none{
+        border-radius: 0 !important;
+    }
+
+    &-total, &-100{
+        border-radius: 100%;
+    }
+}
+
+@for $i from 1 to 97 {
+    @if $i % 4 == 0 {
+        .#{$PREFIX}-opacity-#{$i},.#{$PREFIX}-op-#{$i} {
+            opacity: $i * 1% !important;
+        }
+    }
+}

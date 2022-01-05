@@ -1,0 +1,374 @@
+<div class="container btx-p-b-24">
+    <div class="row btx-m-t-48">
+        <div class="col-md-12">
+            <h1>Exemplo tipos de Input</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Opções de Formatação</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-label="Label">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-placeholder="Placeholder"
+                btx-label="Placeholder">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-icon="fa-user"
+                btx-label="Ícone">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-icon="fa-user"
+                btx-icon-direction="right"
+                btx-label="Ícone a direita">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-complementary-text="Texto complementar"
+                btx-label="Texto complementar">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                [btx-disabled]="1"
+                btx-label="Desabilitado">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-readonly
+                btx-value="Valor exemplo"
+                btx-label="Apenas leitura">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-48">
+        <div class="col-md-12">
+            <p>Validações</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-label="Opcional">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-required
+                btx-label="Obrigátorio">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="email"
+                btx-message-validate="Deve ser um email corporativo caixa"
+                btx-label="Mensagem">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-48">
+        <div class="col-md-12">
+            <p>Tamanhos</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-size="xs"
+                btx-label="Muito pequeno - XS">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-size="sm"
+                btx-label="Pequeno - SM">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-size="st"
+                btx-label="Padrão - ST">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-48">
+        <div class="col-md-12">
+            <p>Tipos</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="text"
+                btx-label="Texto">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="email"
+                btx-label="Email">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="time"
+                btx-label="Tempo">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="date"
+                btx-label="Data">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="number"
+                btx-label="Número">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="password"
+                btx-label="Senha">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-validate
+                btx-type="url"
+                btx-label="Url">
+            </btx-input>
+            <!-- http://site.com.br -->
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <p>Atributtos Globais</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-title="Título"
+                btx-label="Title">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-accesskey="j"
+                btx-label="Access Key">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-hidden
+                btx-label="Hidden">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-lang="pt-br"
+                btx-label="Linguagem">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                btx-draggable
+                btx-label="Arrasta">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-blur)="dispararEvent($event)"
+                btx-contenteditable="true"
+                btx-label="Editável">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-24">
+        <div class="col-md-12">
+            <h3>Eventos</h3>
+        </div>
+        <div  class="col-md-12">
+            <p>Mouse Events</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-click)="cliqueEvent($event)"
+                btx-label="Clique">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-alt-click)="dispararEvent($event)"
+                btx-label="Alt Clique">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-scroll-click)="dispararEvent($event)"
+                btx-label="Scroll Clique">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-mouseenter)="dispararEvent($event)"
+                btx-label="Mouse Enter">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-mouseleave)="dispararEvent($event)"
+                btx-label="Mouse Leave">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-right-click)="dispararEvent($event)"
+                btx-label="Right Click">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-wheel)="dispararEvent($event)"
+                btx-label="Scroll">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Drag Events</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-drag)="dispararEvent($event)"
+                btx-draggable
+                btx-label="Enquanto arrasta">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-dragend)="dispararEvent($event)"
+                btx-draggable
+                btx-label="Solta">
+            </btx-input>
+        </div>
+        <!-- <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-drop)="dispararEvent($event)"
+                btx-label="Recebe">
+            </btx-input>
+        </div> -->
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Focus Events</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-focus)="dispararEvent($event)"
+                btx-label="Focus">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-blur)="dispararEvent($event)"
+                btx-label="Blur">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-change)="dispararEvent($event)"
+                btx-label="Change">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Text Events</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-input)="dispararEvent($event)"
+                btx-label="Input">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-select)="dispararEvent($event)"
+                btx-label="Select Text">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-copy)="dispararEvent($event)"
+                btx-label="Copiar">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-cut)="dispararEvent($event)"
+                btx-label="Cortar">
+            </btx-input>
+        </div>
+        
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Network Events</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-offline)="dispararEvent($event)"
+                btx-label="Offline">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-online)="dispararEvent($event)"
+                btx-label="Online">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Keyboard events</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-keyup)="dispararEvent($event)"
+                btx-label="Keyup">
+            </btx-input>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-keydown)="dispararEvent($event)"
+                btx-label="Keydown">
+            </btx-input>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Acelerometro</p>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 btx-m-t-16">
+            <btx-input
+                (btx-accelerometer)="dispararEvent($event)"
+                btx-label="Acelerometro">
+            </btx-input>
+        </div>
+    </div>
+</div>

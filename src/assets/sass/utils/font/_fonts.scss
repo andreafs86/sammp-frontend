@@ -1,0 +1,675 @@
+@import "../config";
+@import "variables";
+
+/**
+ * Bit Box Fonts
+ *
+ * Arquivo que gerencia as caractéristicas
+ * de componentes de texto
+ *
+ *  @project BitBox
+ *  @version 1.0
+ *  @package utils/fonts/fonts
+ *  @date  08/04/2020
+ *  @lastmodified 15/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @author Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+
+/**
+ * Fonte :root
+ *
+ * Tamanho de fonte padrão.
+ *
+ * @section utils/font/fonts/root
+ */
+:root{
+    font-size: 16px;
+}
+
+/**
+ * Caracteristicas padrão
+ *
+ * Caracteristicas padrão que serão atribuidas a qualquer texto 
+ * colocado fora do espectro de componentes de texto.
+ *
+ * @section utils/fonts/fonts/body
+ */
+body{
+    font-family:  $FONT-FAMILY;
+    font-size: map-get($font-sizes, "size-0" );
+    color: map-get($object_color, "grafite-standard" );
+    font-weight: 500 !important;
+}
+
+/**
+ * Títulos
+ *
+ * Caracteristicas de tags de título
+ *
+ * @section utils/font/fonts/headings
+ */
+$font-max:12;
+$i:0;
+@while $i <= 6{
+    h#{$i + 1}{
+        font-size: map-get($font-sizes, "size-#{$font-max - $i * 2 }");
+        font-weight: 800;
+    }
+    $i: $i + 1;
+}
+
+/**
+ * Paragrafos
+ *
+ * Características da tag de paragrafo <p>
+ *
+ * @section utlis/font/fonts/p
+ */
+p{
+    font-size: map-get($font-sizes, "size-1");
+    font-weight: 300;
+
+    &:not(:only-of-type){
+        + p{
+            margin-top: floor(map-get($font-sizes, "size-1") * 0.7);
+        }
+    }
+}
+
+/**
+ * Hiperlinks
+ *
+ * Características da tag de hiperlink <a>
+ *
+ * @section utils/font/fonts/a
+ */
+a{
+    color: map-get($object_color, "ceu-standard" );
+    font-weight: 300;
+    text-decoration: underline;
+
+    &:hover{
+        color: map-get($object_color, "ceu-standard" );
+    }
+}
+
+/**
+ * Abreviações
+ *
+ * Características da tag de abreviações <abbr>
+ *
+ * @section utils/font/fonts/abbr
+ */
+abbr{
+    color: map-get($object_color, "gelo-darker-3" );
+    font-weight: 500 !important;
+}
+
+/**
+ * Endereços
+ *
+ * Características da tag de endereço <address>
+ *
+ * @section utils/font/fonts/address
+ */
+address{
+    font-size: map-get($font-sizes, "size-less-1" );
+    font-weight: 300;
+    font-style: italic;
+}
+
+/**
+ * Bloco de Citação
+ *
+ * Características da tag de bloco de citação <blockquote>
+ *
+ * @section utils/font/fonts/blockquote
+ */
+blockquote{
+    font-weight: 500 !important;
+    color: map-get($object_color, "grafite-lighter-2" );
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 2em;
+    margin-inline-end: 2em;
+    color: map-get($object_color,'azul_cx-darker-2');
+}
+
+/**
+ * Citação
+ *
+ * Características da tag de citação <cite>
+ * Usada para dar autoria para uma arte
+ *
+ * @section utils/font/fonts/cite
+ */
+cite{
+    font-size: map-get($font-sizes, "size-less-1" );
+    font-weight: 500 !important;
+    color: map-get($object_color, "grafite-standard" );
+}
+
+/**
+ * Legenda para Tabela
+ *
+ * Características da tag de legenda para tabela <caption>
+ * Deve ser usada sempre com uma tabela
+ *
+ * @section utils/font/fonts/caption
+ */
+caption{
+    font-size: map-get($font-sizes, "size-0" );
+    font-weight: 300;
+    color: map-get($object_color, "grafite-lighter-2" );
+}
+
+/**
+ * Codificação
+ *
+ * Características da tag de codificação <code>
+ * Usada para mostrar código na tela
+ *
+ * @section utils/font/fonts/code
+ */
+code{
+    font-family: 'Arial Monospace';
+    font-weight: 300;
+    color: map-get($object_color, "gelo-lighter-3" );
+    background-color: map-get($object_color, "grafite-standard" );
+    padding: 24px;
+    border-radius: 4px;
+    display: inline-block;
+
+    pre{
+        color: map-get($object_color, "gelo-lighter-3" );
+        margin: 0;
+        font-family: 'Arial Monospace';
+    }
+}
+
+/**
+ * Descrição de lista
+ *
+ * Características da tag de descrição de lista <dl>
+ *
+ * @section utils/font/fonts/dl
+ */
+dl{
+    dt{
+        font-size: map-get($font-sizes , "size-0" );
+        font-weight: 500 !important;
+        color: map-get($object_color, "grafite-standard" );
+    }
+    dd{
+        font-size: map-get($font-sizes , "size-0" );
+        font-weight: 300;
+        color: map-get($object_color, "grafite-standard" );
+        margin-inline-start: 2em;
+    }
+}
+
+/**
+ * Deletado
+ *
+ * Características da tag de deleção <del>
+ * Tag usada em documentos para marcar uma parte com deletada 
+ * ou desatualizada
+ *
+ * @section utils/font/fonts/del
+ */
+del{
+    font-size: map-get($font-sizes , "size-0" );
+    font-weight: 300;
+    color: map-get($object_color, "grafite-lighter-2" );
+}
+
+/**
+ * Inserido
+ *
+ * Características da tag de inserção <ins>
+ *
+ * @section utils/font/fonts/ins
+ */
+ins{
+    font-size: map-get($font-sizes , "size-0" );
+    font-weight: 300;
+    color: map-get($object_color, "grafite-standard" );
+}
+
+/**
+ * Legenda de imagem
+ *
+ * Características da tag de legenda de imagem <figcaption>
+ *
+ * @section utils/font/fonts/figcaption
+ */
+figcaption{
+    font-size: map-get($font-sizes, "size-less-1" );
+    font-weight: 300;
+    color: map-get($object_color, "grafite-lighter-2" );
+    
+}
+
+/**
+ * Marcação
+ *
+ * Características da tag de marcação <mark>
+ * Funciona como uma caneta marca texto.
+ *
+ * @section utils/font/fonts/mark
+ */
+mark{
+    font-size: map-get($font-sizes , "size-0" );
+    font-weight: 300;
+    background-color: map-get($object_color, "warning-lighter-2" );
+    color:  map-get($object_color, "warning-darker-3" );
+}
+
+/**
+ * Displays
+ *
+ * Listas de tags que serão utilizadas as classes de display
+ *
+ * @section utils/font/fonts/display/tags
+ */
+$displayTags: ('h1','h2','h3');
+
+/**
+ * Displays
+ *
+ * Script que vai atribuir as caracteristicas de display 
+ * unica e exclusivamente as tags selecionadas.
+ *
+ * @section utils/font/fonts/class/display
+ */
+@each $tag in $displayTags {
+    #{$tag}{
+        &.#{$PREFIX}-display-big-hero{
+            font-size: map-get($font-sizes, "size-20");
+            font-weight: 800;
+        }
+        
+        &.#{$PREFIX}-display-hero{
+            font-size: map-get($font-sizes, "size-18");
+            font-weight: 800;
+        }
+        
+        &.#{$PREFIX}-display-extra-large{
+            font-size: map-get($font-sizes, "size-16");
+            font-weight: 800;
+        }
+        
+        &.#{$PREFIX}-display-large{
+            font-size: map-get($font-sizes, "size-14");
+            font-weight: 800;
+        }
+    }
+}
+
+/**
+ * Títulos
+ *
+ * Especificação de quais tags poderão ser 
+ * atribuidas as classes de título
+ *
+ * @section utils/font/fonts/class/title
+ */
+$titleTags: ('h1','h2','h3','h4','h5');
+
+
+/**
+ * Títulos
+ *
+ * Atribuindo classe as tags especificadas
+ *
+ * @section utils/font/fonts/class/title
+ */
+@each $tag in $titleTags {
+    #{$tag}{
+        &.#{$PREFIX}-title-xl{
+            font-size: map-get($font-sizes, "size-12");
+            font-weight: 800;
+            line-height: map-get($LINE-HEIGHT, 'lg');
+        }
+        
+        &.#{$PREFIX}-title-lg{
+            font-size: map-get($font-sizes, "size-10");
+            font-weight: 800;
+        }
+
+        &.#{$PREFIX}-title-st{
+            font-size: map-get($font-sizes, "size-8");
+            font-weight: 800;
+        }
+
+        &.#{$PREFIX}-title-sm{
+            font-size: map-get($font-sizes, "size-6");
+            font-weight: 800;
+        }
+
+        &.#{$PREFIX}-title-xs{
+            font-size: map-get($font-sizes, "size-4");
+            font-weight: 800;
+        }
+    }
+}
+
+/**
+ * Subtítulos
+ *
+ * Especificação de quais tags poderão ser 
+ * atribuidas as classes de subtítulo
+ *
+ * @section utils/font/fonts/class/title
+ */
+$subTitleTags: ('h2','h3','h4','h5','h6');
+
+
+/**
+ * Títulos
+ *
+ * Atribuindo classe as tags especificadas
+ *
+ * @section utils/font/fonts/class/title
+ */
+@each $tag in $subTitleTags {
+    #{$tag}{
+        &.#{$PREFIX}-subtitle-xl{
+            font-size: map-get($font-sizes, "size-10");
+            font-weight: 500 !important;
+            line-height: map-get($LINE-HEIGHT, 'lg');
+        }
+        
+        &.#{$PREFIX}-subtitle-lg{
+            font-size: map-get($font-sizes, "size-8");
+            font-weight: 500 !important;
+        }
+
+        &.#{$PREFIX}-subtitle-st{
+            font-size: map-get($font-sizes, "size-6");
+            font-weight: 500 !important;
+        }
+
+        &.#{$PREFIX}-subtitle-sm{
+            font-size: map-get($font-sizes, "size-4");
+            font-weight: 500 !important;
+        }
+
+        &.#{$PREFIX}-subtitle-xs{
+            font-size: map-get($font-sizes, "size-2");
+            font-weight: 500 !important;
+        }
+    }
+}
+
+
+/**
+ * Classes de paragrafo
+ *
+ * Características das classes de paragrafo
+ *
+ * @section utils/font/fonts/class/paragrafo
+ */
+.#{$PREFIX}-text-xl{
+    font-size: map-get($font-sizes, "size-4");
+    font-weight: 300;
+    line-height: map-get($LINE-HEIGHT, 'lg');
+}
+
+.#{$PREFIX}-text-lg{
+    font-size: map-get($font-sizes, "size-2");
+    font-weight: 300;
+}
+
+.#{$PREFIX}-text-st{
+    font-size: map-get($font-sizes, "size-0");
+    font-weight: 300;
+}
+
+.#{$PREFIX}-text-sm{
+    font-size: map-get($font-sizes, "size-less-2");
+    font-weight: 300;
+}
+
+.#{$PREFIX}-text-xs{
+    font-size: map-get($font-sizes, "size-less-3");
+    font-weight: 300;
+}
+
+/**
+ * Classes de paragrafo
+ *
+ * Características de espaçamento entre paragrafo
+ *
+ * @section utils/font/fonts/class/paragrafo
+ */
+p:not(:only-of-type){
+    &.#{$PREFIX}-text-lg{        
+        + p{
+            margin-top: floor(map-get($font-sizes, "size-2") * 0.7);
+        }
+    }
+
+    .#{$PREFIX}-text-st{
+        + p{
+            margin-top: floor(map-get($font-sizes, "size-0") * 0.7);
+        }
+    }
+
+    .#{$PREFIX}-text-sm{
+        + p{
+            margin-top: floor(map-get($font-sizes, "size-less-2") * 0.7);
+        }
+    }
+
+    .#{$PREFIX}-text-xs{
+        + p{
+            margin-top: floor(map-get($font-sizes, "size-less-3") * 0.7);
+        }
+    }
+}
+
+
+// TEXT BUTTON
+// .#{$PREFIX}-text-button-lg{
+//     font-size: map-get($font-sizes, "size-0");
+//     font-weight: 800;
+// }
+// 
+// .#{$PREFIX}-text-button-st{
+//     font-size: map-get($font-sizes, "size-less-2");
+//     font-weight: 800;
+// }
+
+// .#{$PREFIX}-text-button-sm{
+//     font-size: map-get($font-sizes, "size-less-3");
+//     font-weight: 800;
+// }
+
+/**
+ * Endereços
+ *
+ * Características da tag de endereço <address>
+ *
+ * @section utils/font/fonts/address
+ */
+@each $font-name, $font-value in $font-sizes{
+    .#{$PREFIX}-text-#{$font-name}, .#{$PREFIX}-f-#{$font-name}{
+        font-size: $font-value;
+    }
+    p:not(:only-of-type).#{$PREFIX}-text-#{$font-name}, p:not(:only-of-type).#{$PREFIX}-tx-#{$font-name}{
+        + p.#{$PREFIX}-text-#{$font-name}, + p.#{$PREFIX}-tx-#{$font-name}{
+            margin-top: floor($font-value * 0.7);
+        }
+    }
+}
+
+/**
+ * Alinhamento de textos
+ *
+ * Características das classes de alinhamento de texto
+ *
+ * @section utils/font/fonts/class/align
+ */
+.#{$PREFIX}-text-center{
+    text-align: center;
+}
+
+.#{$PREFIX}-text-left{
+    text-align: left;
+}
+
+.#{$PREFIX}-text-right{
+    text-align: right;
+}
+
+.#{$PREFIX}-text-justify{
+    text-align: justify;
+}
+
+.#{$PREFIX}-text-justify{
+    text-align: justify;
+}
+
+.#{$PREFIX}-text-align-middle{
+    vertical-align: middle;
+}
+
+.#{$PREFIX}-text-align-top{
+    vertical-align: top;
+}
+
+.#{$PREFIX}-text-align-top{
+    vertical-align: bottom;
+}
+
+/**
+ * Estilo de texto
+ *
+ * Características das classes de estilização de texto
+ *
+ * @section utils/font/fonts/class/style
+ */
+.#{$PREFIX}-text-none{
+    text-decoration: none;
+}
+
+.#{$PREFIX}-text-underline{
+    text-decoration: underline
+}
+
+.#{$PREFIX}-text-line-through{
+    text-decoration: line-through
+}
+
+.#{$PREFIX}-text-overline{
+    text-decoration: overline
+}
+
+.#{$PREFIX}-text-uppercase{
+    text-transform: uppercase;
+}
+
+.#{$PREFIX}-text-lowercase{
+    text-transform: lowercase
+}
+
+.#{$PREFIX}-text-capitalize{
+    text-transform: capitalize
+}
+
+/**
+ * Identação de texto
+ *
+ * Características das classes de identação de texto
+ *
+ * @section utils/font/fonts/class/ident
+ */
+.#{$PREFIX}-text-indent-xs{
+    text-indent: 1em;
+}
+
+.#{$PREFIX}-text-indent-sm{
+    text-indent: 2em;
+}
+
+.#{$PREFIX}-text-indent-st{
+    text-indent: 3em;
+}
+
+.#{$PREFIX}-text-indent-lg{
+    text-indent: 4em;
+}
+
+.#{$PREFIX}-text-indent-xl{
+    text-indent: 5em;
+}
+
+/**
+ * Transbordar texto
+ *
+ * Características das classes de transbordar texto
+ *
+ * @section utils/font/fonts/class/text-overflow
+ */
+.#{$PREFIX}-text-overflow{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+ * Alinhamento entre linhas
+ *
+ * Características de classes de  entrelinhamento de texto
+ *
+ * @section utils/font/fonts/class/line-height
+ */
+ .#{$PREFIX}-text-line-height-lg{
+    line-height: map-get($LINE-HEIGHT, "lg" );
+}
+
+.#{$PREFIX}-text-line-height-st{
+    line-height: map-get($LINE-HEIGHT, "st" );
+}
+
+.#{$PREFIX}-text-line-height-sm{
+    line-height: map-get($LINE-HEIGHT, "sm" );
+}
+
+/**
+ * Estilização de texto
+ *
+ * Características de classes de estilização de texto
+ *
+ * @section utils/font/fonts/class/style
+ */
+.#{$PREFIX}-text-italic{
+    font-style: italic;
+}
+
+/**
+ * Peso de fontes
+ *
+ * Características das classes de peso de fonte
+ *
+ * @section utils/font/fonts/class/weight
+ */
+.#{$PREFIX}-text-book{
+    font-weight: 300;
+}
+
+
+.#{$PREFIX}-text-medium{
+    font-weight: 500 !important;
+}
+
+.#{$PREFIX}-text-heavy{
+    font-weight: 700;
+}
+
+.#{$PREFIX}-text-bold{
+    font-weight: 800;
+}

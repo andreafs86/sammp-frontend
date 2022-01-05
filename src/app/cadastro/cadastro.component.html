@@ -1,0 +1,221 @@
+<div class="container">
+    <div class="row btx-m-t-24">
+        <h1>Cadastro de Requisições de Mudança</h1>
+    </div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" id="formularioCadastro">
+        <div class="row btx-m-t-24">
+            <div class="col-md-4">
+                <btx-input
+                    btx-validate
+                    btx-size="st"
+                    btx-placeholder="Sigla do Sistema"
+                    btx-complemetary-text="Sigla do Sistema"
+                    ngModel
+                    btx-min-length="5"
+                    name="siglaSistema"
+                    btx-type="text"
+                    btx-required
+                    btx-validate
+                    btx-label="Sigla do Sistema"
+                    (btx-input)="formValid()">
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Número de RTC da Requisição de Mudança"
+                    btx-placeholder="Número do RTC"
+                    ngModel
+                    name="numeroRtc"
+                    btx-type="number"
+                    btx-required 
+                    btx-validate
+                    btx-label="RTC"
+                    #nome="ngModel"
+                    (btx-input)="formValid()"
+                    >
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Data de entrega da RM"
+                    btx-placeholder="dd/MM/aaaa"
+                    ngModel
+                    name="dataEntregaString"
+                    btx-type="date" 
+                    btx-validate
+                    btx-label="Data de entrega da RM"
+                    #nome="ngModel"
+                    (btx-input)="formValid()"
+                    >
+                </btx-input>
+            </div>
+        </div>
+        <div class="row btx-m-t-24">
+            <div class="col-md-4"> 
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Data de geração da CRQ"
+                    btx-placeholder="dd/MM/aaaa"
+                    ngModel
+                    name="dataCrqString"
+                    btx-type="date"
+                    btx-validate
+                    btx-label="Data de geração da CRQ"
+                    #nome="ngModel"
+                    (btx-input)="formValid()"
+                    >
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <btx-input
+                    btx-validate
+                    btx-size="st"
+                    btx-placeholder="Data Prevista para Implantação"
+                    btx-complemetary-text="Data Prevista para Implantação"
+                    ngModel
+                    btx-min-length="5"
+                    name="dataPrevistaString"
+                    btx-type="date"
+                    btx-validate
+                    btx-label="Data Prevista para Implantação"
+                    (btx-input)="formValid()">
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Data de Implantação"
+                    btx-placeholder="dd/MM/aaaa"
+                    ngModel
+                    name="dataImplantacaoString"
+                    btx-type="date"
+                    btx-validate
+                    btx-label="Data de Implantação"
+                    #nome="ngModel"
+                    (btx-input)="formValid()"
+                    >
+                </btx-input>
+            </div>
+        </div>
+        <div class="row btx-m-t-24">
+            <div class="col-md-12">
+                <btx-input
+                    btx-validate
+                    btx-size="st"
+                    btx-placeholder="Resumo"
+                    btx-complemetary-text="Resumo"
+                    ngModel
+                    name="resumo"
+                    btx-type="text"
+                    btx-required
+                    btx-validate
+                    btx-label="Resumo"
+                    (btx-input)="formValid()">
+                </btx-input>
+            </div>
+        </div>
+        <div class="row btx-m-t-24">
+            <div class="col-md-12">
+                <div class="ng-tns-c50-7 btx-input st">
+                    <label class="ng-tns-c50-7 ng-star-inserted" for="detalhe">
+                        <span class="principal ng-tns-c50-7 ng-star-inserted">Detalhe</span>
+                    </label>
+                    <textarea id="detalhe" class="ng-tns-c50-7" #nome="ngModel" ngModel name="detalhe" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row btx-m-t-24">
+            <div class="col-md-12">
+                <btx-button
+                    btx-category="primary"
+                    btx-type="submit"
+                    [btx-disabled]="!isValid"
+                    btx-label="Salvar">
+                </btx-button>
+                <btx-button
+                    btx-category="aux_dest"
+                    btx-type="button"
+                    (btx-click)="limpar(f);"
+                    btx-label="Limpar">
+                </btx-button>
+            </div>
+        </div>
+    </form>
+    <div class="row btx-m-t-24">
+        <h1>Lista de Requisições de Mudança</h1>
+    </div>
+    <div class="row btx-m-t-12">
+        <div class="col-12">
+            <div class="btx-table">
+                <div class="configuration">
+                    <div class="left">
+                        <div class="search-result">
+                            <btx-input
+                                btx-name="buscador"
+                                btx-icon="fa-search"
+                                btx-icon-direction="right"
+                                btx-size="xs"
+                                (btx-keyup)="onKeyup($event)"
+                                id="buscador"
+                                btx-type="number"
+                                btx-placeholder="Número do RTC"
+                                ngModel
+                                name="buscador"
+                                [(ngModel)]="buscador"
+                            ></btx-input>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="results">
+                            <span class="number">{{rms.length}} Resultados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <tr class="green-border">            
+                                <th>
+                                    RTC <i class="fa fa-sort btx-size-12"></i>
+                                </th>
+                                <th>
+                                    Sistema <i class="fa fa-sort btx-size-12"></i>
+                                </th>
+                                <th>
+                                    Resumo <i class="fa fa-sort btx-size-12"></i>
+                                </th>
+                                <th>
+                                    Ação 
+                                </th>
+                            </tr>
+                            <tr *ngFor="let rm of rmsFiltered | paginate: { itemsPerPage: 5, currentPage: p }; let i = index"> 
+                                <td>{{rm.numeroRtc}}</td>
+                                <td>{{rm.siglaSistema}}</td>
+                                <td>{{rm.resumo}}</td>
+                                <td>
+                                    <btx-button 
+                                        btx-label="Detalhar"
+                                        btx-category="secondary"
+                                        (btx-click)="detalhar(f, rm)"
+                                    ></btx-button>
+                                    <btx-button 
+                                        btx-label="Excluir"
+                                        btx-category="danger"
+                                        (btx-click)="excluir(rm)"
+                                    ></btx-button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="configuration">
+                    <div class="pagination">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

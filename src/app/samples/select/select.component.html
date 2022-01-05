@@ -1,0 +1,250 @@
+<div class="container">
+    <div class="row btx-m-t-24">
+        <div class="container">
+            <h1>Exemplos de Select</h1>
+        </div>
+    </div>
+    <form #f="ngForm" (ngSubmit)="enviar(f)">
+        <div class="row btx-m-t-16">
+            <div class="col-md-12">
+                <p>Pluralidade</p>
+            </div>
+        </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Seleção Simples"
+                btx-required
+                [btx-options]="options"
+                name="simples"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Seleção multipla"
+                btx-multiple
+                [btx-options]="options"
+                name="multipla"
+                ngModel
+            ></btx-select>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Filtro</p>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Seleção não filtrada"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Seleção filtrada"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+                btx-search
+            ></btx-select>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Tamanhos</p>
+        </div>
+    </div>
+    <div class="row btx-m-t-8">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Muito pequeno"
+                btx-size="xs"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+                btx-search
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Pequeno"
+                btx-size="sm"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+                btx-search
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Padrão"
+                btx-size="st"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+                btx-search
+            ></btx-select>
+        </div>
+    </div>
+
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Estados</p>
+        </div>
+    </div>
+    <div class="row btx-m-t-8">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Habilitado"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Desabilitado"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+                btx-disabled
+                btx-search>
+            </btx-select>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Formatação</p>
+        </div>
+    </div>
+    <div class="row btx-m-t-12">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Texto complementar"
+                btx-complementary-text="Mensagem Complementar"
+                btx-required
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Placeholder"
+                btx-placeholder="Placeholder"
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Ícone"
+                btx-icon="fa-user"
+                [btx-options]="options"
+                name="filtrada"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Com título"
+                btx-title="Título :)"
+                [btx-options]="options"
+                name="titulo"
+                ngModel
+            ></btx-select>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Validação</p>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Obrigatório"
+                btx-title="Título :)"
+                [btx-options]="options"
+                name="titulo"
+                btx-required
+                btx-validate
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Opções máximas(2)"
+                [btx-options]="options"
+                name="titulo"
+                btx-multiple
+                btx-max="2"
+                btx-required
+                btx-validate
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Opções mínimas(2)"
+                [btx-options]="options"
+                name="titulo"
+                btx-multiple
+                btx-min="2"
+                btx-required
+                btx-validate
+                ngModel
+            ></btx-select>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-12">
+            <p>Eventos Javascript</p>
+        </div>
+    </div>
+    <div class="row btx-m-t-16">
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Select"
+                [btx-options]="options"
+                name="titulo"
+                (btx-select)="eventoJs($event)"
+                ngModel
+            ></btx-select>
+        </div>
+        <div class="col-md-3">
+            <btx-select
+                btx-label="Mouse Enter"
+                [btx-options]="options"
+                name="titulo"
+                (btx-mouseenter)="eventoJs($event)"
+                ngModel
+            ></btx-select>
+        </div>
+    </div>
+    <div class="row btx-m-t-16 btx-m-b-24">
+        <div class="col-md-12">
+            <btx-button
+                btx-validate
+                btx-category="primary"
+                btx-type="submit"
+                btx-label="Enviar">
+            </btx-button>
+        </div>
+    </div>
+    
+    </form>
+</div>

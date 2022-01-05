@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row btx-m-t-24">
+        <h1>Exemplo de Formulário</h1>
+    </div>
+    <form   #f="ngForm" (ngSubmit)="onSubmit(f)" id="formulario">
+    <div class="row btx-m-t-24">
+            <div class="col-md-4">
+                <btx-input
+                    btx-size="st"
+                    btx-complemetary-text="Email corporativo da Caixa"
+                    btx-placeholder="joao.neves@caixa.gov"
+                    ngModel
+                    btx-icon="fa-user"
+                    btx-min-length="15"
+                    btx-message-validate="Deve conter no mínimo 15 caracteres"
+                    name="email"
+                    btx-type="email"
+                    btx-required 
+                    btx-icon-direction="left"
+                    btx-validate
+                    btx-label="Email"
+                    #nome="ngModel"
+                    (btx-input)="formValid()"
+                    >
+                </btx-input>
+            </div>
+            <div class="col-md-4">
+                <btx-input
+                    btx-validate
+                    btx-size="st"
+                    btx-placeholder="Sua senha"
+                    btx-complemetary-text="Texto complementar"
+                    ngModel
+                    btx-icon="fa-user"
+                    btx-min-length="5"
+                    name="claudio"
+                    btx-type="password"
+                    btx-required
+                    btx-validate
+                    btx-icon-direction="left"
+                    btx-label="Senha"
+                    (btx-input)="formValid()">
+                </btx-input>
+            </div>
+        </div>
+        <div class="row btx-m-t-24">
+            <div class="col-md-12">
+            <btx-button
+                btx-category="primary"
+                btx-type="submit"
+                [btx-disabled]="!isValid"
+                btx-label="Enviar">
+            </btx-button>
+            </div>
+        </div>
+</form>
+</div>  

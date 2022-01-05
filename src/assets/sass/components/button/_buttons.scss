@@ -1,0 +1,126 @@
+
+@import "properties";
+/**
+ * Arquivo de botões
+ *
+ *  @project BitBox
+ *  @version 1.0
+ *  @package components/button/buttons
+ *  @date  24/04/2020
+ *  @lastmodified 24/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @author Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+
+/**
+ * Sessão necessária de configuração dos botões
+ * @section components/button/buttons/btn
+ */
+.#{$PREFIX}-btn{
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    box-shadow: 0px 2px 1px rgba(#000000,0.16);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: none;
+    }
+
+
+    
+    @each $category,$types in $map-properties-button {
+        &.#{$category} {
+            @each $names, $properties in $types {
+                &#{$names}{
+                    color: map-get($properties,"color_tx");
+                    background-color: map-get($properties,"color_bg");
+                    transform:  map-get($properties, "transform");
+                    border:  map-get($properties, "border");
+                    font-weight: map-get($properties, "font-weight");
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    /**
+     * Propriedades do botão
+     *
+     * @section components/button/buttons/properties
+     */
+    @each $name-scale, $property in $map-scales-button {
+        &.#{$name-scale}{
+            line-height: 100%;
+            min-width: map-get($property, "min-width" );
+            font-size: map-get($property, "font-size" );
+            padding: calc(#{map-get($property, "font-size" )} - 4px);
+
+            .fa{
+                font-size: map-get($property, "font-size" );
+                height: map-get($property, "font-size" );
+                width: map-get($property, "font-size" );
+            }
+        }
+    }
+    
+    /**
+     * Estados - Selecionado
+     *
+     * @section components/button/buttons/properties
+     * @subsection components/button/buttons/estados/selecionado
+     */
+    &.selected{
+        background-color:map-get($object_color,'turquesa-darker-1');
+        color: map-get($object_color,'gelo-lighter-3');
+        border: {
+            style:solid;
+            width:1px;
+            color: map-get($object_color,'turquesa-darker-2');
+        }
+        box: {
+            sizing: border-box;
+            shadow: none;
+        }
+    }
+
+
+    /**
+     * Estados - Foco
+     *
+     * @section components/button/buttons/properties
+     * @subsection components/button/buttons/estados/selecionado
+     */
+     &:focus{
+         outline: none;
+     }
+    &.focus:focus:not(:hover):not(:active):not(:disabled){
+        outline-color: map-get($object_color,'info-standard');
+        outline-width: 2px;
+        outline-style: solid;
+        outline-offset: 2px;
+
+        &.alt-focus{
+            outline-color: map-get($object_color,'warning-standard');
+        }
+    }
+
+
+    /**
+     * Estados - Desabilitado
+     *
+     * @section components/button/buttons/properties
+     * @subsection components/button/buttons/estados/desabilitado
+     */
+     &:disabled{
+        background-color:map-get($object_color,'gelo-lighter-1') !important;
+        box-shadow: none;
+        border: none;
+        color: map-get($object_color,'gelo-lighter-3') !important;
+    }
+}

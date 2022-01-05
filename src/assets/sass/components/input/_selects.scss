@@ -1,0 +1,161 @@
+@import "properties";
+.#{$PREFIX}-input{
+    &.select{
+        display: block;
+        .input-box{
+            justify-content: space-between;
+            background: map-get($object_color,'gelo-lighter-3');
+            border-radius: 4px;
+            .input-icon{
+                min-width: 24px;
+            }
+            .placeholder{
+                width: 100%;
+                padding: 0 8px;
+                line-height: 42px;
+                cursor: pointer;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                border-radius: 4px 0 0 4px;
+            }
+
+            .values{
+                display:grid;
+                grid-template-columns: auto auto;
+                grid-auto-flow: column;
+                grid-auto-columns: minmax(42px,45%) ;
+                grid-gap: 4px;
+                width: 100%;
+                padding: 0 8px;
+                overflow: hidden;
+                max-width: 100%;
+                justify-content: left;
+
+                .value{
+                    padding: 0 8px;
+                    border-radius: 4px;
+                    color: map-get($object_color,'gelo-lighter-3');
+                    background-color: map-get($object_color,'uva-darker-1');
+                    font-weight: 300;
+                    text-align: center;
+                    display: grid;
+                    grid-template-columns: auto 16px;
+                    font-size: map-get($font-sizes,'size-less-3');
+                    justify-content: space-between;
+                    margin-top: 8px;
+                    height: 24px;
+                    line-height: 24px;
+                    align-items: center;
+                    min-width: 0;
+
+                    &:first-of-type{
+                        margin-left: 0;
+                    }
+
+                    .fa{
+                        margin-left: 4px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .count{
+                    padding: 0 8px;
+                    border-radius: 4px;
+                    font-weight: 300;
+                    text-align: center;
+                    font-size: map-get($font-sizes,'size-less-3');
+                    color: map-get($object_color,'gelo-lighter-3');
+                    background-color: map-get($object_color,'gelo-darker-2');
+                    display: block;
+                    margin-top: 8px;
+                    height: 24px;
+                    line-height: 24px;
+            }
+
+        }
+
+        .options {
+            width: 89%;
+            list-style: none;
+            border: 1px solid map-get($object_color,'gelo-standard');
+            margin-top: 8px;
+            background-color: map-get($object_color,'gelo-lighter-3');
+            border-radius: 4px;
+            max-height: 240px;
+            position: absolute;
+            margin-top: 8px;
+            z-index: 99;
+            overflow: auto;
+
+            &.message-show{
+                margin-top: -24px;
+            }
+
+            ul{
+                list-style: none;
+                margin-bottom: 0;
+
+                li{
+                    padding: 8px;
+                    font-size: map-get($font-sizes,'size-0');
+                    color: map-get($object_color,'grafite-standard');
+                    padding: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 300;
+
+                    &:hover{
+                        background-color: map-get($object_color,'azul_cx-lighter-1');
+                        color: map-get($object_color,'gelo-lighter-3');
+                        cursor: pointer;
+                    }
+
+                    &.disabled{
+                        background-color: map-get($object_color,'gelo-lighter-3');
+                        color: map-get($object_color,'gelo-darker-2');
+                        cursor: default;
+                    }
+
+                    &.search-option{
+                        background-color: map-get($object_color,'gelo-lighter-2');
+                        display: block;
+                        width: 100%;
+
+                        .fa{
+                            color: map-get($object_color,'grafite-standard');
+                        }
+                    }
+
+                    .fa-check-square{
+                        color: map-get($object_color,'uva-darker-1');
+                        margin-top: 4px;
+                    }
+                    .fa-circle {
+                        color: map-get($object_color,'tangerina-lighter-1');
+                        margin-top: 8px;
+                    }
+
+                }
+
+            }
+        }
+        &.xs{
+            .placeholder{
+                line-height: 24px;
+                padding: 0 8px;
+            }
+        }
+        &.sm{
+            .placeholder{
+                line-height: 36px;
+            }
+        }
+
+        &.disabled{
+            .input-box, .input-icon{
+                background-color: map-get($object_color,'gelo-lighter-2');
+            }
+        }
+    }
+}

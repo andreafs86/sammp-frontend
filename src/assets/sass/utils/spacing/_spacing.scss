@@ -1,0 +1,68 @@
+@import "../config";
+@import "variables";
+
+/**
+ * Bit Box Margins
+ *
+ * Arquivo responsável por gerar os helpers de espaçamento
+ *
+ *  @project BitBox
+ *  @version 1.0
+ *  @package utils/spacing
+ *  @date  16/04/2020
+ *  @lastmodified 16/04/2020  <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @author Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Econômica Federal 
+ */
+
+ /**
+  * Atribuindo espaçamentos
+  *
+  * Gerando helpers de margem e padding
+  *
+  * @section utils/spacing/spacings
+  */
+@each $alias,$value in $map-margin-types {
+
+/**
+  * Atribuindo margens
+  *
+  * Gerando helpers de margem 
+  *
+  * @section utils/spacing/spacings/margins
+  */
+  .#{$PREFIX}-m {
+    @for $i from 1 to 120 {
+      @if $i%$ATOM == 0 {
+        &-#{$alias}-#{$i} {
+          margin-#{$value}:$i * 1px;
+        }
+        &-#{$i} {
+          margin:$i * 1px;
+        }
+      }
+    }
+  }  
+
+/**
+  * Atribuindo paddings
+  *
+  * Gerando helpers de margem 
+  *
+  * @section utils/spacing/spacings/paddings
+  */
+  .#{$PREFIX}-p {
+    @for $i from 0 to 120 {
+      @if $i%$ATOM == 0 {
+        &-#{$alias}-#{$i} {
+          padding-#{$value}:$i * 1px;
+        }
+
+        &-#{$i} {
+          padding:$i * 1px;
+        }
+      }
+    }
+  }  
+}

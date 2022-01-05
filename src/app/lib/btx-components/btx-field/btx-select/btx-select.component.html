@@ -1,0 +1,84 @@
+<div class="btx-input select {{size}}"
+[class.disabled]="disabled"
+(mouseenter)="onMouseenter()"
+(mouseleave)="onMouseleave()"
+[title]="title || name"
+
+(click)="onClick()">
+    <div class="box-message">
+        <label [attr.for]="name" (click)="openOption()" *ngIf="label">
+            <span class="principal" *ngIf="label">{{label}}</span>
+            <span *ngIf="!required && validate">- Opcional</span>
+        </label>
+        <div class="input-box {{state}}"
+          [class.message-show]=" state =='warning' || state =='error' || state == 'success'"
+          [class.disabled]="disabled" >
+            <div class="input-icon" *ngIf="icon" (click)="openOption()">
+                <i class="fa {{icon}} btx-size-16"></i>
+            </div>            
+
+            <span class="placeholder" *ngIf="!optionsSelect.length && placeholder" (click)="openOption()">
+                {{placeholder}}
+            </span>
+
+            <span class="placeholder" *ngIf="optionsSelect.length && !isMultiple" (click)="openOption()">
+                {{optionsSelect[0].label}}
+            </span>
+            
+            <div class="values " *ngIf="isMultiple && optionsSelect.length" >
+                <div class="value" *ngFor="let optionSelect of optionsSelect | slice:0:2" (click)="unSelectOption(optionSelect)">
+                    <span class="btx-text-overflow">{{optionSelect.label}}</span>
+                    <i class="fa fa-times-circle btx-size-12"></i>
+                </div>
+            </div>
+
+            <span class="count" *ngIf="optionsSelect.length > 2">
+                +{{optionsSelect.length - 2}}
+            </span>
+
+            <input type="hidden"
+            [attr.name]="name"  
+            [attr.value]="values" 
+            [required]="required"
+            readonly
+            (input)="propagateValue()"
+            (change)="propagateValue()"
+            >
+
+            <div class="input-icon right" (click)="openOption()">
+                <i class="fa fa-caret-down btx-size-16" *ngIf="!open"></i>
+                <i class="fa fa-caret-up btx-size-16" *ngIf="open"></i>
+            </div>
+        </div>
+        <div class="input-message" *ngIf="validate &&  (state=='warning' || state=='error' || state =='success')">
+            <i class="fa fa-info-circle"></i>
+            <span>{{messageValidate}}</span>
+        </div>
+    </div>
+    <div class="complementary-text" *ngIf="complemetaryText">
+        <span class="text">
+            {{complemetaryText}}
+        </span>
+    </div>
+    <div class="options" *ngIf="open" [class.message-show]="state == 'warning'">
+        <ul *ngIf="options" >
+            <li class="search-option" *ngIf="isSearch">
+                <btx-input
+                btx-placeholder="Filtrar opções"
+                btx-icon="fa-search"
+                btx-icon-direction="right"
+                btx-size="sm"
+                [btx-disabled]="disabled"
+                (btx-input)="filter($event)">
+                </btx-input>
+            </li>
+            <ng-container *ngFor="let option of options">
+                <li *ngIf="!option?.hide" [class.disabled]="option.disabled" (click)="selectOption(option)" title="{{option.label}}">
+                    <span class="btx-text-overflow">{{option.label}}</span>
+                    <i class="fa fa-check-square btx-size-16" *ngIf="isSelect(option) && isMultiple"></i>
+                    <i class="fa fa-circle btx-size-8" *ngIf="isSelect(option) && !isMultiple"></i>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

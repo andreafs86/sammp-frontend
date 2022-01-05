@@ -1,0 +1,73 @@
+<div class="btx-navigation" (window:resize)="setPaddingCustom()" *ngIf="showMenu">
+    <div class="navigation-principal without-shadow" *ngIf="direction == 'top' ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul role="navigation" >
+                        <li 
+                        [class.active]="isActive(option)"
+                        *ngFor="let option of options" (click)="openChilds(option)">
+                            <a>
+                                {{option.label}} 
+                                <i class="fa fa-chevron-down btx-size-8" *ngIf="!isActive(option) && option.hasOwnProperty('childs')"></i>
+                                <i class="fa fa-chevron-up btx-size-8" *ngIf="isActive(option)"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navigation-secondary" *ngIf="isOpenSubOptions && direction == 'top'">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" *ngFor="let subOption of subOptions | keyvalue">
+                    <div class="category" *ngIf="subOption.key == 'without-category' ">
+                        <ul>
+                            <li *ngFor="let item of subOption.value.childs" (click)="openChilds(subOption.value)">{{item.label}}</li>
+                        </ul>
+                    </div>
+                    <div class="category" *ngIf="subOption.key != 'without-category'">
+                        <span class="title">{{subOption.value.label}}</span>
+                        <ul>
+                            <li *ngFor="let item of subOption.value.childs" (click)="openChilds(subOption.value)">
+                                <span class="label" (click)="openChilds(item)">{{item.label}}</span>
+                                <ul class="grandchilds" *ngIf="false">
+                                    <li *ngFor="let grandchild of item.childs">{{grandchild.label}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="left-navbar" *ngIf="direction == 'left'">
+        <ul>
+            <li [class.active]="isActive(option)" *ngFor="let option of options" >
+                <a (click)="openChilds(option)"  *ngIf="!isActive(option)">
+                    {{option.label}} <i class="fa fa-chevron-down btx-size-8 btx-m-t-4" *ngIf="option.hasOwnProperty('childs')"></i>  
+                </a>
+                <a (click)="closeChilds()" *ngIf="isActive(option)">
+                    {{option.label}} <i class="fa fa-chevron-up btx-size-8 btx-m-t-4" ></i>  
+                </a>
+
+                <div class="categories" *ngIf="isActive(option) && isOpenSubOptions">
+                    <div class="category" *ngFor="let subOption of option.childs | keyvalue">
+                        <span class="title"  *ngIf="subOption.key != 'without-category'">{{subOption.value.label}}</span>
+                        <ul>
+                            <li *ngFor="let item of subOption.value.childs" (click)="openChilds(item)">
+                                <span class="label" >{{item.label}}</span>
+                                <ul class="grandchilds" *ngIf="item.childs == subOptions">
+                                    <li *ngFor="let grandchild of item.childs">{{grandchild.label}}</li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

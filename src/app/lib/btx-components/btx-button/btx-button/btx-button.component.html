@@ -1,0 +1,60 @@
+<a 
+    role="link"
+    *ngIf="type == 'link'"
+    class="btx-btn {{class}} {{size}} {{category}}"
+
+    [attr.accessKey]="accesskey"
+    [attr.lang]="lang"
+    [attr.tabindex]="tabindex"
+    [attr.title]="title"
+    [attr.href]="link"
+
+    (focus)="onEvent($event)"
+    (mouseleave)="onEvent($event)"
+    (mouseenter)="onEvent($event)"
+    (contextmenu)="onEvent($event)"
+    (blur)="onEvent($event)"
+    (drag)="onEvent($event)"
+    (dragend)="onEvent($event)"
+    (drop)="onEvent($event)"
+    (mouseup)="onEvent($event)"
+
+    (mouseout)="removeFocus()"
+    (focus)="addFocus()"
+    
+    [class.focus]="focus" >
+    <i *ngIf="icon && iconDirection == 'left'" class="fa {{icon}}"></i>
+    {{label}}
+    <i *ngIf="icon && iconDirection == 'right'" class="fa {{icon}}"></i>
+</a>
+
+<button
+    (focus)="onEvent($event)"
+    (mouseleave)="onEvent($event)"
+    (mouseenter)="onEvent($event)"
+    (contextmenu)="onEvent($event)"
+    (blur)="onEvent($event)"
+    (drag)="onEvent($event)"
+    (dragend)="onEvent($event)"
+    (drop)="onEvent($event)"
+    (mouseup)="onEvent($event)"
+    [attr.accessKey]="accesskey"
+    [attr.lang]="lang"
+    [attr.tabindex]="tabindex"
+    [attr.title]="title"
+    role="button"
+    #button 
+    *ngIf="type != 'link'"
+    class="btx-btn {{class}} {{size}} {{category}}" 
+    [attr.title]="title"
+    [autofocus]="autofocus"
+    [disabled]="disabled"
+    [attr.type]="type"
+    (click)="onEvent($event)"
+    (mouseout)="removeFocus()"
+    (focus)="addFocus()"
+    [class.focus]="focus" >
+    <i *ngIf="icon && iconDirection == 'left'" class="fa {{icon}}"></i>
+    {{label}}
+    <i *ngIf="icon && iconDirection == 'right'" class="fa {{icon}}"></i>
+</button>

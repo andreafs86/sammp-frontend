@@ -1,0 +1,77 @@
+<div class="btx-input datepicker">
+    <btx-input 
+    (btx-click)="openCalendar()"
+    btx-readonly
+    btx-icon="fa-calendar-alt"
+    btx-icon-direction="right"
+    [btx-value]="selectedDate | date: 'dd/MM/yyyy'"
+    btx-label="Rótulo"></btx-input>
+    <div class="calendar" *ngIf="calendarOpen">
+        <div class="multiple-choice" *ngIf="multiple">  
+            <span class="active">De (Início)</span>
+            <span>Até (fim)</span>
+        </div>
+        <header class="header" (click)="openChoice()">
+            <div class="text">
+                <span class="year">{{selectedDate.getFullYear()}}</span>
+                <span class="month">{{monthString[selectedDate.getMonth()]}}</span>
+            </div>  
+            <i class="fa fa-chevron-down btx-size-12" *ngIf="choiceMode == 'calendar'"></i>
+            <i class="fa fa-chevron-up btx-size-12"  *ngIf="choiceMode == 'month-year'"></i>
+        </header>
+        <div class="body box-calendar"  *ngIf="choiceMode == 'calendar'">
+             <ul class="week-days">
+                <li>Dom</li>
+                <li>Seg</li>
+                <li>Ter</li>
+                <li>Qua</li>
+                <li>Qui</li>
+                <li>Sex</li>
+                <li>Sab</li>
+             </ul>
+             <div class="days-box">
+                 <!-- LINE 1-->
+                 <div *ngFor="let box of beforeBox">{{box}}</div>
+                 <div *ngFor="let days of daysBox">{{days}}</div>
+                 <!-- <div *ngFor="daysSelected">29</div>
+                 <div *ngFor="afterBox">29</div> -->
+             </div>
+        </div>
+        <div class="body choice-data" *ngIf="choiceMode == 'month-year'">
+            <div class="box-header">
+                <span>Ano</span>
+                <span>Mês</span>
+            </div>
+            <div class="ano">
+                <div class="indicator">
+                    <i class="fa fa-chevron-circle-up btx-size-16"></i>
+                </div>
+                <ul>
+                    <li>2018</li>
+                    <li>2019</li>
+                    <li class="active">2020</li>
+                    <li>2021</li>
+                    <li>2022</li>
+                </ul>
+                <div class="indicator">
+                    <i class="fa fa-chevron-circle-down btx-size-16"></i>
+                </div>
+            </div>
+            <div class="mes">
+                <div class="indicator">
+                    <i class="fa fa-chevron-circle-up btx-size-16"></i>
+                </div>
+                <ul>
+                    <li>2018</li>
+                    <li>2019</li>
+                    <li  class="active">2020</li>
+                    <li>2021</li>
+                    <li>2022</li>
+                </ul>
+                <div class="indicator">
+                    <i class="fa fa-chevron-circle-down btx-size-16"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

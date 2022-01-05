@@ -1,0 +1,424 @@
+/**
+ *  Bit Box - 1.0
+ *  Arquivo de variáveis sass para cores.
+ *  
+ *  Esse arquivo vai detalhar e armazenar todas as 
+ *  cores utilizadas no Design System como um todo.  
+ *  
+ *  @project BitBox 
+ *  @version 1.0
+ *  @package utils/color/variables
+ *  @date 06/04/2020 
+ *  @lastmodified utils/color/variables 15/04/2020 <ljoliveira2@stefanini.com>
+ *  @creator Luigi Oliveira <ljoliveira2@stefanini.com>
+ *  @copyright 2020, Caixa Economica Federal 
+ */
+ 
+/**
+ * Cores Standard
+ * 
+ * Principais cores que vão gerar suas variações
+ *  
+ * @section utils/color/variables/standard_colors
+ */
+
+/**
+ * Azul Caixa Standard
+ * 
+ * Escala HSL da Cor Azul Caixa da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/azul_cx
+ */
+$st_azul_cx: ( 
+    'H' : 207,
+    'S' : 100,
+    'L' : 33,
+);
+
+/**
+ * Laranja Caixa standard
+ * 
+ * Escala HSL da Cor Laranja Caixa da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/laranja_cx
+ */
+$st_laranja_cx: (
+    'H' : 36,
+    'S' : 100,
+    'L' : 48,
+);
+
+/**
+ * Turquesa standard
+ * 
+ * Escala HSL da cor Turquesa da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/turquesa
+ */
+$st_turquesa: (
+    'H' : 171,
+    'S' : 43,
+    'L' : 53,
+);
+
+/**
+ * Gelo standard
+ * 
+ * Escala HSL da cor Gelo da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/gelo
+ */
+$st_gelo: (
+    'H' : 189,
+    'S' : 25,
+    'L' : 76,
+);
+
+/**
+ * Grafite standard
+ * 
+ * Escala HSL da cor Grafite da paleta Fixa
+ *  
+ * @subsection utils/color/variables/standard_colors/paleta_fixa/grafite
+ */
+$st_grafite: (
+    'H' : 189,
+    'S' : 25,
+    'L' : 24,
+);
+
+/**
+ * Céu Standard
+ *
+ * Escala HSL da cor Céu da paleta Flexível
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_flexivel/ceu
+ */
+$st_ceu: (
+    'H' : 193,
+    'S' : 100,
+    'L' : 45,
+);
+
+/**
+ * Uva Standard
+ *
+ * Escala HSL da cor Uva da paleta Flexível
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_flexivel/uva
+ */
+$st_uva: (
+    'H' : 321,
+    'S' : 30,
+    'L' : 57,
+);
+
+/**
+ * Limão Standard
+ *
+ * Escala HSL da cor Limão da paleta flexível
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_flexivel/limao
+ */
+$st_limao: (
+    'H' : 68,
+    'S' : 90,
+    'L' : 42,
+);
+
+/**
+ * Tangerina Standard
+ *
+ * Escala HSL da cor Tangerina da paleta flexível
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_flexivel/tangerina
+ */
+$st_tangerina: (
+    'H' : 42,
+    'S' : 100,
+    'L' : 49,
+);
+
+/**
+ * Goiaba Standard
+ *
+ * Escala HSL da cor Goiaba da paleta flexível
+ *
+ * @section utils/color/variables/standard_colors/paleta_flexivel/
+ * @subsection utils/color/variables/standard_colors/paleta_flexivel/goiaba
+ */
+$st_goiaba: (
+    'H' : 10,
+    'S' : 82,
+    'L' : 65,
+);
+
+/**
+ * Info Standard
+ *
+ * Escala HSL da cor Tangerina da paleta Semantica
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_semantica/tangerina
+ */
+$st_info: (
+    'H' : 245,
+    'S' : 63,
+    'L' : 47,
+);
+
+/**
+ * Success Standard
+ *
+ * Escala HSL da cor Success da paleta Semantica
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_semantica/success
+ */
+$st_success: (
+    'H' : 144,
+    'S' : 72,
+    'L' : 38,
+);
+
+/**
+ * Warning Standard
+ *
+ * Escala HSL da cor Warning da paleta Semantica
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_semantica/warning
+ */
+$st_warning: (
+    'H' : 49,
+    'S' : 100,
+    'L' : 50,
+);
+
+/**
+ * Danger Standard
+ *
+ * Escala HSL da cor Danger da paleta Semantica
+ *
+ * @subsection utils/color/variables/standard_colors/paleta_semantica/danger
+ */
+$st_danger: (
+    'H' : 7,
+    'S' : 86,
+    'L' : 49,
+);
+
+/**
+ * Objeto de Cores
+ *
+ * Objeto com todas as cores standard
+ *
+ * @section utils/color/variables/object_colors
+ */
+$colors: (
+
+    // Brand Colors
+    'azul_cx':          $st_azul_cx,
+    'laranja_cx':       $st_laranja_cx,
+    'turquesa':         $st_turquesa,
+    'gelo':             $st_gelo,
+    'grafite':          $st_grafite,
+    
+    
+    // Fluid Colors
+    'ceu':              $st_ceu,
+    'uva':              $st_uva,
+    'limao':            $st_limao,
+    'tangerina':        $st_tangerina,
+    'goiaba':           $st_goiaba,
+
+    // Semantic colors
+    'info':             $st_info,
+    'success':          $st_success,
+    'warning':          $st_warning,
+    'danger':           $st_danger,
+);
+
+/**
+ * Escala de Cores
+ *
+ * Escala de cores que será utilizada 
+ * para gerar as demais cores.
+ *
+ * @section utils/color/variables/color_scale
+ */
+$color_scale:8;
+
+
+/**
+ * Objeto de cores
+ *
+ * Objeto de cores que vai ser populado com 
+ * as cores secundarias.
+ * 
+ * @subsection utils/color/variables/object_colors/
+ */
+$object_color:(); // Nome Completo
+$object_color_alias:(); // Apelidos
+
+@each $color-name, $color-map in $colors {
+
+    /**
+     * Mapeamento de valores de cor
+     *
+     * @subsection utils/color/variables/object_colors/map_colors
+     */
+    $h:map-get($color-map, 'H' ); // Hue
+    $s:map-get($color-map, 'S' ); // Saturation
+    $l:map-get($color-map, 'L' ); // Lightness
+
+    $initial: str-slice(#{$color-name}, 1,3); // 3 primeras letras do nome da cor
+
+
+    /**
+     * Cores Standard
+     *
+     * @subsection utils/color/variables/object_colors/standard_color
+     */
+    $standard_color: (#{$color-name}-standard : hsl($h,$s,$l)); // Cor Standard
+    $standard_color_alias: (#{$initial}-s: hsl($h,$s,$l)); // Apelido de cor Standard
+    
+    $object_color: map-merge($object_color,$standard_color); // Incrimentando objeto de cores
+    $object_color_alias: map-merge($object_color_alias,$standard_color_alias); // Incrimentando objeto de apelido cores
+    
+    /**
+     * Cores Mais Claras
+     *
+     * @subsection utils/color/variables/object_colors/lighter_colors
+     */
+    @for $i from 1 to 4 {
+        
+        $_l: min($l + ($i * $color_scale),100);
+        $lighter_color: (#{$color-name}-lighter-#{$i} : hsl($h, $s, $_l));
+        
+        $lighter_color_alias: (#{$initial}-l#{$i} : hsl($h,$s,$_l));
+
+        $object_color: map-merge($object_color,$lighter_color);
+        $object_color_alias: map-merge($object_color_alias,$lighter_color_alias);
+    }
+
+    /**
+    * Cores Mais Escuras
+    *
+    * @subsection utils/color/variables/object_colors/darker_color
+    */
+    @for $i from 1 to 4 {
+        
+        $_l: max($l - ($i * $color_scale),0);
+
+        $darker_color: (#{$color-name}-darker-#{$i}: hsl($h,$s,$_l));
+        $darker_color_alias: (#{$initial}-d#{$i} : hsl($h,$s,$_l));
+
+        $object_color: map-merge($object_color,$darker_color);
+        $object_color_alias: map-merge($object_color_alias,$darker_color_alias);
+    }
+    
+    /**
+     * Cores de Fundo
+     *
+     * @section utils/color/variables/object_colors/background_colors
+     */
+    $object_color: map-merge($object_color,('bg-porcelana'  : #F8FBFB)); 
+    $object_color: map-merge($object_color,('bg-polar'      : #F2F7F8));
+    
+    $object_color_alias: map-merge($object_color_alias,('por'  : #F7FAFA)); // Apelido
+    $object_color_alias: map-merge($object_color_alias,('pol'   : #F2F7F8)); // Apelido
+    
+}
+
+/**
+ * Padrão de cores gradient
+ *
+ * Objeto com cores gradientes
+ *
+ * @section utils/color/variables/object_colors/gradient_colors
+ */
+$gradient_colors: (
+
+    'gradient-oceano':  // Gradient Oceano 
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')     + ' 30%' ,
+    'gradient-ceu': // Gradient Céu
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'ceu-standard')          + ' 30%' ,
+    'gradient-uva': // Gradient Uva
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'uva-standard')          + ' 30%',
+    'gradient-limao': // Gradient Limão
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')     +' 40%,'+
+        map-get($object_color, 'limao-standard')        +' 70%',
+    'gradient-tangerina': // Gradient Tangerina
+        map-get($object_color, 'azul_cx-standard')       + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')      + ' 40%,' +
+        map-get($object_color, 'tangerina-standard')     + ' 70%' ,
+    'gradient-goiaba': // Gradient Goiaba
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')     + ' 40%,' +
+        map-get($object_color, 'goiaba-standard')       + ' 70%' ,
+    'gradient-agua': // Gradient Água
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'ceu-standard')          + ' 50%' ,
+    'gradient-primavera': // Gradient Primavera
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'uva-standard')          + ' 50%',
+    'gradient-inverno': // Gradient Inverno
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'limao-standard')        + ' 50%',
+    'gradient-verao': // Gradient Verão
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'tangerina-standard')    + ' 50%' ,
+    'gradient-outono': // Gradient Outono
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'goiaba-standard')       + ' 50%'
+);
+
+$gradient_colors_alias:(
+    'gr-oce' : // Gradient Ocenano Apelido
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')     + ' 30%' ,
+    'gr-ceu' : // Gradient Céu Apelido
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'ceu-standard')          + ' 30%' ,
+    'gr-uva' : // Gradient Uva Apelido
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'uva-standard')          + ' 30%',
+    'gr-lim' : // Gradient Limão Apelido
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')     +' 40%,'+
+        map-get($object_color, 'limao-standard')        +' 70%',
+    'gr-tan' : // Gradient Tangerina Apelido
+        map-get($object_color, 'azul_cx-standard')       + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')      + ' 40%,' +
+        map-get($object_color, 'tangerina-standard')     + ' 70%' ,
+    'gr-goi' : // Gradient Goiaba Apelido
+        map-get($object_color, 'azul_cx-standard')      + ' 0%,' +
+        map-get($object_color, 'turquesa-standard')     + ' 40%,' +
+        map-get($object_color, 'goiaba-standard')       + ' 70%' ,
+    'gr-agu' : // Gradient Água Apelido
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'ceu-standard')          + ' 50%' ,
+    'gr-pri' : // Gradient Primavera Apelido
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'uva-standard')          + ' 50%',
+    'gr-inv' : // Gradient Inverno Apelido
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'limao-standard')        + ' 50%',
+    'gr-ver' : // Gradient Verão Apelido
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'tangerina-standard')    + ' 50%' ,
+    'gr-out' : // Gradient Outono Apelido
+        map-get($object_color, 'turquesa-standard')     + ' 0%,' +
+        map-get($object_color, 'goiaba-standard')       + ' 50%'
+);
+
+
+/**
+ * Angulatura de padrão gradiente de cores
+ *
+ * @subsection utils/color/variables/object_colors/gradient_colors/angle_pattern
+ */
+$deg_default: 90deg;
+

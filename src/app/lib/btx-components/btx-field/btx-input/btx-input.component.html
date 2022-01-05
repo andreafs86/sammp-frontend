@@ -1,0 +1,106 @@
+<div class="btx-input {{size}}" 
+    [attr.draggable]="draggable"
+    [attr.hidden]="hidden"
+    [attr.lang]="lang"
+    [attr.title]="title"
+    [attr.translate]="translate"
+    [class.focus]="focusIn"
+    (mouseenter)="onEvent($event)"
+    (mouseleave)="onEvent($event)"
+    (contextmenu)="onEvent($event)"
+    (mouseout)="removeFocus()"
+    [attr.contenteditable]="contenteditable"
+    (click)="onEvent($event)"
+    (dbclick)="onEvent($event)"
+    (drag)="onEvent($event)"
+    (dragend)="onEvent($event)"
+    (drop)="onEvent($event)"
+    (wheel)="onEvent($event)"
+    (mouseup)="onEvent($event)"
+    >
+    <div class="box-message">
+        <label [attr.for]="name" *ngIf="label" >
+            <span class="principal" *ngIf="label">{{label}}</span>
+            <span *ngIf="!required && validate">- Opcional</span>
+            <!-- <i class="fa fa-info-circle btx-size-12" *ngIf="!required && validate"></i> -->
+        </label>
+        <div class="input-box"
+          [class.message-show]="(validate && messageValidate && !isValid) || state =='error' || state == 'success'"
+          [class.warning]="validate && messageValidate && !isValid"
+          [class.error]="state == 'error'"
+          [class.success]="state == 'success'"
+          [class.readonly]="readonly"
+          [class.disabled]="disabled">
+
+            <div class="input-icon" [@fadeInOut] *ngIf="icon && iconDirection=='left'">
+                <i class="fa {{icon}} btx-size-16"></i>
+            </div>
+
+            <input
+                [attr.accesskey]="accesskey"
+                [attr.id]="name"
+                [attr.placeholder]="placeholder"
+                [attr.name]="name"
+                [attr.max]="max"
+                [attr.min]="min"
+                [attr.minlength]="minlength"
+                [attr.maxLength]="maxlength"
+                [attr.type]="type"
+                [attr.pattern]="pattern"
+                [attr.value]="value"
+                [attr.tabindex]="tabindex"
+                [disabled]="disabled"
+                [readonly]="readonly"
+                [required]="required"
+                [autofocus]="autofocus"
+                [attr.formnovalidate]="!validate ? 'formnovalidate' : null"
+                (select)="onEvent($event)"
+                (copy)="onEvent($event)"
+                (cut)="onEvent($event)"
+                (blur)="onEvent($event)"
+                (input)="onEvent($event)"
+                (keydown)="onEvent($event)"
+                (focus)="onEvent($event)"
+                (keyup)="onEvent($event)"
+                (keyup)="onClean()"
+                (focus)="addFocus()"
+                (blur)="removeFocus()"
+                (keyup)="onVoice($event)"
+                (blur)="validateInput($event)"
+                (input)="validateInput($event)"
+                (change)="onEvent($event)"
+                (input)="propagateValue()"
+                (blur)="propagateValue()">
+                
+            <div class="input-icon right no-click" *ngIf="icon && iconDirection == 'right' && !(isClean || type =='password' || isShowPass)">
+                <i class="fa {{icon}} btx-size-16"></i>
+            </div>
+
+            <div class="input-icon right" *ngIf="isClean && type !='password' && !isShowPass && !readonly && !disabled" (click)="cleanInput()">
+                <i class="fa fa-times-circle btx-size-16" *ngIf="isClean"></i>
+            </div>
+
+            <div class="input-icon right" *ngIf="isVoice && voiceStatus">
+                <i class="fas fa-microphone-alt  btx-size-16 mic-icon"></i>
+            </div>
+
+            <div class="input-icon right " *ngIf="type=='password' || isShowPass" (click)="showPass()">
+                <i class="fa fa-eye btx-size-16" *ngIf="!isShowPass && type =='password'" ></i>
+                <i class="fa fa-eye-slash btx-size-16" *ngIf="isShowPass"></i>
+            </div>
+        </div>
+
+        <div class="input-message" *ngIf="validate && messageValidate && !isValid || state=='error' || state =='success' ">
+            <i class="fa fa-info-circle"></i>
+            <span>{{messageValidate}}</span>
+        </div>
+    </div>
+    <div class="complementary-text" *ngIf="complemetaryText">
+        <span class="text">
+            {{complemetaryText}}
+        </span>
+        <span class="count-max-text" *ngIf="maxlength">
+            {{value.length}}/{{maxlength}}
+        </span>
+    </div>
+</div>
