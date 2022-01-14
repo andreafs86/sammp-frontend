@@ -115,7 +115,7 @@ export class BtxInputComponent extends BtxGlobalAttributesComponent implements O
         },
         'date':{
           'icon':'fa-calendar-alt',
-          'message':'O camp deve ser um horário'
+          'message':'O campo deve ser uma data'
         },
         'time':{
           'icon':'fa-clock',

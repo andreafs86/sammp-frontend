@@ -1,6 +1,6 @@
 {
-  "name": "bitbox-angular-v8",
-  "version": "0.0.0",
+  "name": "sammp",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

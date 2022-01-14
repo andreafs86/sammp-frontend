@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ConsoleLogService } from 'src/app/lib/services/console-log.service';
 import { CadastroService, RequisicaoMudanca } from './cadastro.service';
 import { DialogMensagem } from '../util/mensagem.component';
 import {MatDialog} from '@angular/material/dialog';
+import {BtxInputComponent} from '../lib/btx-components/btx-field/btx-input/btx-input.component';
 
 @Component({
   selector: 'app-cadastro',
@@ -20,6 +21,15 @@ export class CadastroComponent implements OnInit {
   p:number = 1;
 
   constructor(private console: ConsoleLogService, private cadastroService: CadastroService, public dialog: MatDialog) { }
+
+  @ViewChild("siglaSistema") eSiglaSistema: BtxInputComponent;
+  @ViewChild("numeroRtc") eNumeroRtc: BtxInputComponent;
+  @ViewChild("dataEntrega") eDataEntrega: BtxInputComponent;
+  @ViewChild("dataCrq") eDataCrq: BtxInputComponent;
+  @ViewChild("dataPrevista") eDataPrevista: BtxInputComponent;
+  @ViewChild("dataImplantacao") eDataImplantacao: BtxInputComponent;
+  @ViewChild("resumo") eResumo: BtxInputComponent;
+  @ViewChild("detalhe") eDetalhe: BtxInputComponent;
 
   ngOnInit(): void { 
     this.form = document.getElementById('formularioCadastro');
@@ -66,7 +76,6 @@ export class CadastroComponent implements OnInit {
     });
 
     this.isValid = valid;
-    console.log(this.isValid);
   }
   
   onSubmit(f:NgForm){
@@ -104,16 +113,15 @@ export class CadastroComponent implements OnInit {
   }
 
   limpar(f:NgForm){
-    let rm: RequisicaoMudanca = <RequisicaoMudanca>f.value;
-    rm.siglaSistema = "";
-    rm.dataCrqString = "";
-    rm.dataEntregaString = "";
-    rm.dataImplantacaoString = "";
-    rm.dataPrevistaString = "";
-    rm.detalhe = "";
-    rm.numeroRtc = null;
-    rm.resumo = "";
-    f.setValue(rm);
+    f.form.reset();
+    this.eSiglaSistema.cleanInput();
+    this.eNumeroRtc.cleanInput();
+    this.eDataEntrega.cleanInput();
+    this.eDataCrq.cleanInput();
+    this.eDataPrevista.cleanInput();
+    this.eDataImplantacao.cleanInput();
+    this.eResumo.cleanInput();
+    this.eDetalhe.cleanInput();
     console.log("limpeza do cadastro");
   }
 
