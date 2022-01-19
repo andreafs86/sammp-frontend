@@ -4,6 +4,7 @@ import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface RequisicaoMudanca {
+    id?: number;
     numeroRtc: number;
     siglaSistema: string;
     resumo: string;
@@ -34,7 +35,7 @@ export class CadastroService {
     }
 
     excluir(rm: RequisicaoMudanca): Observable<any>{
-      return this.http.delete(this.RMEndpoint + "/" + rm.numeroRtc);
+      return this.http.delete(this.RMEndpoint + "/" + rm.id);
     }
 
     postRM(rm: RequisicaoMudanca): Observable<any>{

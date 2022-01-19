@@ -622,6 +622,7 @@ export class BtxInputComponent extends BtxGlobalAttributesComponent implements O
 
   writeValue(value: any) {
     this.value = value;
+    this.element.nativeElement.querySelector('input').value = value;
   }
 
   propagateChange = (_: any) => {

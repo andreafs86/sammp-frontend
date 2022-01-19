@@ -31,8 +31,12 @@ export class AppComponent {
   }
 
   pushDataChart(rm: RequisicaoMudanca, dataInicio: string, dataFim: string, isResumo: boolean): Array<any>{
-    let dataInicioDate = new Date(+dataInicio.split("-")[0], +dataInicio.split("-")[1], +dataInicio.split("-")[2], 0,0,0);
-    let dataFimDate = new Date(+dataFim.split("-")[0], +dataFim.split("-")[1], +dataFim.split("-")[2], 0,0,0);
+    let dataInicioSplit = dataInicio.split("-");
+    let dataInicioDate = new Date(Number(dataInicioSplit[0]), Number(dataInicioSplit[1]) - 1, Number(dataInicioSplit[2]), 0,0,0);
+
+    let dataFimSplit = dataFim.split("-");
+    let dataFimDate = new Date(Number(dataFimSplit[0]), Number(dataFimSplit[1]) - 1, Number(dataFimSplit[2]), 0,0,0);
+
     let resumo = isResumo ? '' : rm.resumo;
     return [ rm.numeroRtc.toString(), resumo, this.createTooltip(rm.numeroRtc, rm.dataEntregaString, rm.dataCrqString,rm.dataPrevistaString, rm.dataImplantacaoString, rm.siglaSistema, rm.resumo, rm.detalhe), dataInicioDate, dataFimDate];
   }
@@ -110,6 +114,9 @@ export class AppComponent {
             });
         
             massa[0] = data;
+
+            console.log("massa do gráfico:");
+            console.log(massa);
 
             drawChartWithAngular(massa);
           }

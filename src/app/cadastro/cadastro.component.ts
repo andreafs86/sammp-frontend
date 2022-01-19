@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ConsoleLogService } from 'src/app/lib/services/console-log.service';
 import { CadastroService, RequisicaoMudanca } from './cadastro.service';
@@ -19,6 +19,7 @@ export class CadastroComponent implements OnInit {
   rmsFiltered: Array<RequisicaoMudanca> = [];
   buscador:number ;
   p:number = 1;
+  id:number = null;
 
   constructor(private console: ConsoleLogService, private cadastroService: CadastroService, public dialog: MatDialog) { }
 
@@ -29,7 +30,7 @@ export class CadastroComponent implements OnInit {
   @ViewChild("dataPrevista") eDataPrevista: BtxInputComponent;
   @ViewChild("dataImplantacao") eDataImplantacao: BtxInputComponent;
   @ViewChild("resumo") eResumo: BtxInputComponent;
-  @ViewChild("detalhe") eDetalhe: BtxInputComponent;
+  @ViewChild("detalhe") eDetalhe: ElementRef<HTMLTextAreaElement>;
 
   ngOnInit(): void { 
     this.form = document.getElementById('formularioCadastro');
@@ -83,7 +84,19 @@ export class CadastroComponent implements OnInit {
     if(this.isValid){
       console.log(f.value);
 
-      this.cadastroService.postRM(f.value).subscribe({
+      const rm: RequisicaoMudanca = {
+        id : this.id,
+        siglaSistema : this.eSiglaSistema.value,
+        numeroRtc : +this.eNumeroRtc.value,
+        dataEntregaString : this.eDataEntrega.value,
+        dataCrqString : this.eDataCrq.value,
+        dataPrevistaString : this.eDataPrevista.value,
+        dataImplantacaoString : this.eDataImplantacao.value,
+        resumo : this.eResumo.value,
+        detalhe : this.eDetalhe.nativeElement.value,
+      };
+      
+      this.cadastroService.postRM(rm).subscribe({
         next: data => {
           this.dialog.open(DialogMensagem, {
             data: {
@@ -107,7 +120,16 @@ export class CadastroComponent implements OnInit {
   }
 
   detalhar(f:NgForm, rm:RequisicaoMudanca){
-    f.setValue(rm);
+    this.eSiglaSistema.writeValue(rm.siglaSistema);
+    this.eNumeroRtc.writeValue(rm.numeroRtc);
+    this.eDataEntrega.writeValue(rm.dataEntregaString);
+    this.eDataCrq.writeValue(rm.dataCrqString);
+    this.eDataPrevista.writeValue(rm.dataPrevistaString);
+    this.eDataImplantacao.writeValue(rm.dataImplantacaoString);
+    this.eResumo.writeValue(rm.resumo);
+    this.eDetalhe.nativeElement.value = rm.detalhe;
+    this.id = rm.id;
+    this.formValid();
     document.getElementById('numeroRtc').focus();
     console.log('detalhar RM');
   }
@@ -121,7 +143,8 @@ export class CadastroComponent implements OnInit {
     this.eDataPrevista.cleanInput();
     this.eDataImplantacao.cleanInput();
     this.eResumo.cleanInput();
-    this.eDetalhe.cleanInput();
+    this.id = null;
+    this.formValid();
     console.log("limpeza do cadastro");
   }
 
