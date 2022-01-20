@@ -5,6 +5,11 @@
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" id="formularioCadastro">
         <div class="row btx-m-t-24">
             <div class="col-md-4">
+                <p>ID: <mark>{{id}}</mark></p>
+            </div>
+        </div>
+        <div class="row btx-m-t-24">
+            <div class="col-md-4">
                 <btx-input
                     btx-validate
                     btx-size="st"
@@ -30,7 +35,6 @@
                     ngModel
                     name="numeroRtc"
                     btx-type="number"
-                    btx-required 
                     btx-validate
                     btx-label="RTC"
                     #nome="ngModel"
@@ -166,17 +170,32 @@
                     <div class="left">
                         <div class="search-result">
                             <btx-input
-                                btx-name="buscador"
+                                btx-name="buscadorId"
                                 btx-icon="fa-search"
                                 btx-icon-direction="right"
                                 btx-size="xs"
                                 (btx-keyup)="onKeyup($event)"
-                                id="buscador"
+                                id="buscadorId"
+                                btx-type="number"
+                                btx-placeholder="ID"
+                                ngModel
+                                name="buscadorId"
+                                [(ngModel)]="buscadorId"
+                            ></btx-input>
+                        </div>
+                        <div class="search-result">
+                            <btx-input
+                                btx-name="buscadorRtc"
+                                btx-icon="fa-search"
+                                btx-icon-direction="right"
+                                btx-size="xs"
+                                (btx-keyup)="onKeyup($event)"
+                                id="buscadorRtc"
                                 btx-type="number"
                                 btx-placeholder="Número do RTC"
                                 ngModel
-                                name="buscador"
-                                [(ngModel)]="buscador"
+                                name="buscadorRtc"
+                                [(ngModel)]="buscadorRtc"
                             ></btx-input>
                         </div>
                     </div>
@@ -189,7 +208,10 @@
                 <div class="row">
                     <div class="col-12">
                         <table class="table table-bordered">
-                            <tr class="green-border">            
+                            <tr class="green-border">     
+                                <th>
+                                    ID <i class="fa fa-sort btx-size-12"></i>
+                                </th>       
                                 <th>
                                     RTC <i class="fa fa-sort btx-size-12"></i>
                                 </th>
@@ -204,6 +226,7 @@
                                 </th>
                             </tr>
                             <tr *ngFor="let rm of rmsFiltered | paginate: { itemsPerPage: 5, currentPage: p }; let i = index"> 
+                                <td>{{rm.id}}</td>
                                 <td>{{rm.numeroRtc}}</td>
                                 <td>{{rm.siglaSistema}}</td>
                                 <td>{{rm.resumo}}</td>

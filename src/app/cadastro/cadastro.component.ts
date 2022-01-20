@@ -17,7 +17,8 @@ export class CadastroComponent implements OnInit {
   public isValid:boolean;
   rms: Array<RequisicaoMudanca> = [];
   rmsFiltered: Array<RequisicaoMudanca> = [];
-  buscador:number ;
+  buscadorRtc:string = "";
+  buscadorId:string = "";
   p:number = 1;
   id:number = null;
 
@@ -58,12 +59,37 @@ export class CadastroComponent implements OnInit {
 
   onKeyup(event: KeyboardEvent){
     console.log("onKeyup")
-    console.log(this.buscador);
-    if(this.buscador && this.buscador.toString().length > 0){
-      this.rmsFiltered = this.rms.filter(r => r.numeroRtc.toString().includes(this.buscador.toString()));
-    }else{
-      this.rmsFiltered = this.rms;
-    }
+    console.log(this.buscadorId);
+    console.log(this.buscadorRtc);
+    
+    this.rmsFiltered = this.rms.filter(r => {
+
+      if(this.buscadorId == "" && this.buscadorRtc == ""){
+        return true;
+      } else if(this.buscadorId != "" && this.buscadorRtc != ""){
+        return (
+          ((this.buscadorRtc == "" || r.numeroRtc == null) ? 
+            false : 
+            r.numeroRtc.toString().includes(this.buscadorRtc))
+        && 
+          (this.buscadorId == "" ? 
+            false : 
+            r.id.toString().includes(this.buscadorId))
+        )
+      }else{
+        return (
+          ((this.buscadorRtc == "" || r.numeroRtc == null) ? 
+            false : 
+            r.numeroRtc.toString().includes(this.buscadorRtc))
+        || 
+          (this.buscadorId == "" ? 
+            false : 
+            r.id.toString().includes(this.buscadorId))
+        )
+
+      }
+    });
+
     console.log(this.rmsFiltered);
   }
 
@@ -109,10 +135,10 @@ export class CadastroComponent implements OnInit {
         error: error => {
           this.dialog.open(DialogMensagem, {
             data: {
-              mensagem: error.message
+              mensagem: error.error.message
             }
           });
-          console.error(error.message, error);
+          console.error(error);
         }  
       });;
     }
