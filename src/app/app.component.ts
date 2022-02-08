@@ -38,7 +38,7 @@ export class AppComponent {
     let dataFimDate = new Date(Number(dataFimSplit[0]), Number(dataFimSplit[1]) - 1, Number(dataFimSplit[2]), 0,0,0);
 
     let resumo = isResumo ? '' : rm.resumo;
-    return [ rm.numeroRtc.toString(), resumo, this.createTooltip(rm.numeroRtc, rm.dataEntregaString, rm.dataCrqString,rm.dataPrevistaString, rm.dataImplantacaoString, rm.siglaSistema, rm.resumo, rm.detalhe), dataInicioDate, dataFimDate];
+    return [ rm.numeroRtc ? rm.numeroRtc.toString() : rm.id.toString(), resumo, this.createTooltip(rm.numeroRtc ? rm.numeroRtc : rm.id, rm.dataEntregaString, rm.dataCrqString,rm.dataPrevistaString, rm.dataImplantacaoString, rm.siglaSistema, rm.resumo, rm.detalhe), dataInicioDate, dataFimDate];
   }
 
   buscar(e: Event){
